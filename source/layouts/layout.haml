@@ -1,0 +1,46 @@
+!!!
+/[if IE 8] <html class="no-js lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    %title= data.page.title || "SET YOUR SITE NAME"
+    %meta{:content => data.page.description || "SET YOUR SITE DESCRIPTION", :name => "description"}
+    %meta{:content => "width=device-width", :name => "viewport"}
+    = javascript_include_tag "libs/modernizr-2.8.3"
+    = stylesheet_link_tag "main"
+  %body
+    %header
+      .logo
+      .head-contacts
+        %p= link_to '+38 (095) 308 21 06'
+        %p= link_to '+38 (098) 111 89 26'
+        %p= link_to 'ledtech.ua@gmail.com'
+      %nav.nav
+        %ul
+          %li.nav__item.selected Наш ассортимент
+          %li.nav__item Зачем использовать
+          %li.nav__item Рассчитать цены
+          %li.nav__item Галерея
+          %li.nav__item Отзывы
+    %div{:role => "main", :class => "main"}= yield
+    %footer
+      %p 
+        This is a default page for 
+        %a{:href => "http://html5boilerplate.com/"} HTML5 Boilerplate 3.0
+        adapted as a HAML 
+        %a{:href => "http://middlemanapp.com/"} Middleman 3.0
+        project template, using 
+        %a{:href => "http://susy.oddbird.net/"} Susy, 
+        SCSS, Coffeescript, Sprockets and more.
+      %p
+        = link_to '+38 (095) 308 21 06'
+        = link_to '+38 (098) 111 89 26'
+      %p= link_to 'ledtech.ua@gmail.com'
+
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="library/js/vendor/jquery-2.1.1.js"><\/script>')
+    = javascript_include_tag "main"

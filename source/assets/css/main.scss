@@ -1,0 +1,171 @@
+/* /////////////////////////////////////////////////////
+
+PROJECT NAME
+creator@project.com @ Creator Company
+
+///////////////////////////////////////////////////// */
+
+
+/* Compass Imports
+--------------------------------------------- */
+
+@import "compass/reset";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/background-size";
+
+
+
+/* Variables
+--------------------------------------------- */
+
+$base-color: #000;
+$highlight-color: #ea2427;
+
+$body-font: Helvetica, Arial, sans-serif;
+
+$break-small: 480px;
+
+
+/* Sprites
+--------------------------------------------- */
+
+// USE WITH RETINA SPRITES MIXIN
+// $sprites: sprite-map("sprites/*.png", $spacing: 2px);
+// $sprites2x: sprite-map("sprites_x2/*.png", $spacing: 4px);
+
+
+/* Imports
+--------------------------------------------- */
+
+@import "libs/hidpi";
+@import "libs/retina-sprites";
+@import "base";
+@import "grid";
+@import "utils";
+@import "modules";
+@import "pages";
+
+
+
+/* /////////////////////////////////////////////////////
+
+GLOBAL LAYOUT
+
+///////////////////////////////////////////////////// */
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+  width: 1400px;
+  margin: auto;
+  padding-top: 149px;
+
+  background: #eee url(../img/header.jpg) no-repeat;
+}
+header:after {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #00c;
+}
+
+.logo {
+  float: left;
+  width: 190px;
+  height: 60px;
+  background: url(../img/logo.png) 50% 50% no-repeat;
+}
+
+.nav__item {
+  display: inline-block;
+  padding: 25px 30px 15px;
+
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.nav__item.selected {
+  background-color: #00c;
+  color: #fff;
+}
+
+.head-contacts {
+  margin: 5px 20px;
+  float: right;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.order-link a {
+  padding: 2px 15px;
+  color: $base-color;
+  box-shadow: 0 0 0px 2px #99d;
+  text-decoration: none;
+}
+
+.showcase {
+  background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
+}
+
+.showcase section {
+  width: 1000px;
+  margin: auto;
+}
+
+.snippet {
+  display: inline-block;
+  width: 45%;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.snippet__thumb {
+  margin: 0 20px;
+  float: left;
+}
+
+.snippet__title {
+  margin: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.snippet__description {
+  text-transform: uppercase;
+}
+
+.snippet__more-link a {
+  margin-top: 10px;
+  color: #666;
+}
+
+.snippet__stickers {
+  margin-top: 60px;
+}
+
+.snippet__price {
+  float: right;
+}
+
+.banner {
+  height: 268px;
+  padding: 0 230px;
+  position: relative;
+  background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
+}
+.banner:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 4px;
+  background-color: #00c;
+}
+
+footer {
+  margin: 50px;
+}
