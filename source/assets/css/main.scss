@@ -142,19 +142,20 @@ header:after {
   color: #666;
 }
 
-.snippet__stickers {
+.snippet .stickers {
   margin-top: 60px;
 }
 
-.snippet__price {
+.snippet .price {
   float: right;
 }
 
 .banner {
   height: 268px;
-  padding: 0 230px;
+  padding: 0 250px;
   position: relative;
   background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
+  text-align: center;
 }
 .banner:after {
   content: '';
@@ -164,6 +165,25 @@ header:after {
   bottom: -4px;
   height: 4px;
   background-color: #00c;
+}
+
+.banner h3 {
+  padding: 20px 0 30px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.banner .stickers {
+  margin-top: 25px;
+}
+
+.banner .price {
+  float: left;
+}
+
+.banner .order-link {
+  float: right;
 }
 
 footer {
