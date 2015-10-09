@@ -22,4 +22,6 @@ TODO:
 
 * right layout for snippets
 
+* fix banner width
+
 * text-transform: uppercase everywhere

@@ -59,6 +59,14 @@ GLOBAL LAYOUT
   margin: 0 auto;
 }
 
+._left {
+  float: left;
+}
+
+._right {
+  float: right;
+}
+
 header {
   width: 1400px;
   margin: auto;
@@ -106,6 +114,10 @@ header:after {
   text-decoration: none;
 }
 
+.price .amount {
+  color: #00c;
+}
+
 .showcase {
   background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
 }
@@ -119,7 +131,7 @@ header:after {
   display: inline-block;
   width: 45%;
   margin: 20px;
-  overflow: hidden;
+  overflow: hidden; /* prevent collapse */
 }
 
 .snippet__thumb {
@@ -151,9 +163,14 @@ header:after {
 }
 
 .banner {
-  height: 268px;
-  padding: 0 250px;
   position: relative;
+  margin-bottom: 4px;
+  padding: 0 250px;
+}
+
+.banner._markers {
+  height: 268px;
+  padding: 0 230px;
   background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
   text-align: center;
 }
@@ -167,15 +184,23 @@ header:after {
   background-color: #00c;
 }
 
+.banner._features {
+  background: #333;
+  color: #fff;
+  text-align: justify;
+}
+
 .banner h3 {
   padding: 20px 0 30px;
   font-size: 22px;
   font-weight: bold;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .banner .stickers {
   margin-top: 25px;
+  padding: 0 20px;
 }
 
 .banner .price {
@@ -184,6 +209,33 @@ header:after {
 
 .banner .order-link {
   float: right;
+}
+
+.banner .thumb {
+  background: #000;
+  width: 420px;
+  height: 250px;
+  /* margin: 0 20px; */
+}
+
+.banner .thumb._left {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.banner .thumb._right {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.banner article {
+  margin: 0 15px;
+  /* overflow: hidden; */
+}
+
+.banner article:after {
+  content: '';
+  clear: both;
 }
 
 footer {
