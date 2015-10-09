@@ -21,6 +21,7 @@ creator@project.com @ Creator Company
 
 $base-color: #000;
 $highlight-color: #ea2427;
+$select-color: #242cdc;
 
 $body-font: Helvetica, Arial, sans-serif;
 
@@ -78,7 +79,7 @@ header:after {
   content: '';
   display: block;
   height: 4px;
-  background-color: #00c;
+  background-color: $select-color;
 }
 
 .logo {
@@ -96,7 +97,7 @@ header:after {
   font-weight: bold;
 }
 .nav__item.selected {
-  background-color: #00c;
+  background-color: $select-color;
   color: #fff;
 }
 
@@ -110,12 +111,13 @@ header:after {
 .order-link a {
   padding: 2px 15px;
   color: $base-color;
+  background: #9195ed;
   box-shadow: 0 0 0px 2px #99d;
   text-decoration: none;
 }
 
 .price .amount {
-  color: #00c;
+  color: $select-color;
 }
 
 .showcase {
@@ -165,77 +167,125 @@ header:after {
 .banner {
   position: relative;
   margin-bottom: 4px;
-  padding: 0 250px;
-}
 
-.banner._markers {
-  height: 268px;
-  padding: 0 230px;
-  background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
-  text-align: center;
-}
-.banner:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  height: 4px;
-  background-color: #00c;
-}
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 4px;
+    background-color: $select-color;
+  }
 
-.banner._features {
-  background: #333;
-  color: #fff;
-  text-align: justify;
-}
+  section {
+    width: 1000px;
+    margin: auto;
+  }
 
-.banner h3 {
-  padding: 20px 0 30px;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-}
+  h3, h4 {
+    text-align: center;
+  }
 
-.banner .stickers {
-  margin-top: 25px;
-  padding: 0 20px;
-}
+  h3 {
+    padding: 20px 0 30px;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
-.banner .price {
-  float: left;
-}
+  h4 {
+    padding: 40px 0;
+    font-size: 20px;
+  }
 
-.banner .order-link {
-  float: right;
-}
+  section {
+    overflow: hidden;
 
-.banner .thumb {
-  background: #000;
-  width: 420px;
-  height: 250px;
-  /* margin: 0 20px; */
-}
+    &:after {
+      content: '';
+      clear: both;
+    }
+  }
 
-.banner .thumb._left {
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
+  .stickers {
+    margin-top: 25px;
+    padding: 3px 15px;
 
-.banner .thumb._right {
-  margin-top: 20px;
-  margin-left: 20px;
-}
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
 
-.banner article {
-  margin: 0 15px;
-  /* overflow: hidden; */
-}
+  .price {
+    float: left;
+  }
 
-.banner article:after {
-  content: '';
-  clear: both;
+  .order-link {
+    float: right;
+  }
+
+  .thumb {
+    background: #000;
+    width: 480px;
+    height: 250px;
+
+    &._left {
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+
+    &._right {
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+  }
+
+  &._markers {
+    height: 268px;
+    background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
+    text-align: center;
+  }
+
+  &._features {
+    background: #555;
+    color: #fff;
+    text-align: justify;
+
+    ul, p {
+      padding: 0 15px;
+    }
+
+    li:before {
+      content: '- ';
+    }
+
+    .banner__footer {
+      background: #2a2a2a;
+      margin-top: 20px;
+
+      .order-link {
+        font-size: 22px;
+        padding-bottom: 30px;
+        float: none;
+        text-align: center;
+        text-transform: uppercase;
+
+        a {
+          padding: 5px 50px;
+          color: $select-color;
+          background: none;
+          box-shadow: 0 0 0px 2px $select-color;
+        }
+      }
+
+    }
+
+  }
+
 }
 
 footer {
