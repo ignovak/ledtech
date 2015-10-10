@@ -13,32 +13,26 @@
     = stylesheet_link_tag "main"
   %body
     %header
-      .logo
-      .head-contacts
-        %p= link_to '+38 (095) 308 21 06'
-        %p= link_to '+38 (098) 111 89 26'
-        %p= link_to 'ledtech.ua@gmail.com'
-      %nav.nav
-        %ul
-          %li.nav__item.selected Наш ассортимент
-          %li.nav__item Зачем использовать
-          %li.nav__item Рассчитать цены
-          %li.nav__item Галерея
-          %li.nav__item Отзывы
+      .header__content
+        .logo
+        %nav
+          %ul.nav
+            %li.nav__item.selected Наш ассортимент
+            %li.nav__item Зачем использовать
+            %li.nav__item Рассчитать цены
+            %li.nav__item Галерея
+            %li.nav__item Отзывы
+        .head-contacts
+          %p= link_to '+38 (095) 308 21 06', 'tel:38-095-308-2106'
+          %p= link_to '+38 (098) 111 89 26', 'tel:38-098-111-8926'
+          %p= link_to 'ledtech.ua@gmail.com', 'mailto:ledtech.ua@gmail.com'
     %div{:role => "main", :class => "main"}= yield
     %footer
-      %p 
-        This is a default page for 
-        %a{:href => "http://html5boilerplate.com/"} HTML5 Boilerplate 3.0
-        adapted as a HAML 
-        %a{:href => "http://middlemanapp.com/"} Middleman 3.0
-        project template, using 
-        %a{:href => "http://susy.oddbird.net/"} Susy, 
-        SCSS, Coffeescript, Sprockets and more.
-      %p
-        = link_to '+38 (095) 308 21 06'
-        = link_to '+38 (098) 111 89 26'
-      %p= link_to 'ledtech.ua@gmail.com'
+      .links
+        = succeed ';' do
+          = link_to '+38 (095) 308 21 06', 'tel:38-095-308-2106'
+        = link_to '+38 (098) 111 89 26', 'tel:38-098-111-8926'
+      .links= link_to 'ledtech.ua@gmail.com', 'mailto:ledtech.ua@gmail.com'
 
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
     :javascript

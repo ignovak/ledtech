@@ -68,13 +68,15 @@ GLOBAL LAYOUT
   float: right;
 }
 
-header {
-  width: 1400px;
-  margin: auto;
-  padding-top: 149px;
-
-  background: #eee url(../img/header.jpg) no-repeat;
+a[href^=tel] {
+  text-decoration: none;
 }
+
+header {
+  padding-top: 148px;
+  background: #eee url(../img/header.png) 50% 0 no-repeat;
+}
+
 header:after {
   content: '';
   display: block;
@@ -82,17 +84,32 @@ header:after {
   background-color: $select-color;
 }
 
+.header__content {
+  min-width: 1024px;
+  max-width: 1280px;
+  display: flex;
+  margin: auto;
+}
+
 .logo {
-  float: left;
   width: 190px;
   height: 60px;
   background: url(../img/logo.png) 50% 50% no-repeat;
 }
 
-.nav__item {
-  display: inline-block;
-  padding: 25px 30px 15px;
+nav {
+  flex-grow: 1;
+}
 
+.nav {
+  display: flex;
+}
+
+.nav__item {
+  flex-grow: 1;
+  padding: 25px 5px 15px;
+
+  text-align: center;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -103,7 +120,6 @@ header:after {
 
 .head-contacts {
   margin: 5px 20px;
-  float: right;
   font-size: 13px;
   line-height: 1.2;
 }
@@ -337,5 +353,13 @@ h3 {
 }
 
 footer {
-  margin: 50px;
+  background: #eee;
+  padding: 30px 0 50px;
+
+  .links {
+    width: 1000px;
+    margin: auto;
+    text-align: right;
+  }
+
 }

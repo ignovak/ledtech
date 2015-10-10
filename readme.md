@@ -15,6 +15,8 @@ For more help follow [Middleman's project template instructions](http://middlema
 
 
 TODO:
+* seo
+
 * fix page width, it must be adaptive
 * logo, nav items, contacts must be links
 * implement smart selection of nav items
@@ -22,6 +24,8 @@ TODO:
 
 * right layout for snippets
 
-* fix banner width
+* finish feedback
+
+* finish social buttons
 
 * text-transform: uppercase everywhere
