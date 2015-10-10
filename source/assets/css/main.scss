@@ -103,19 +103,25 @@ nav {
 
 .nav {
   display: flex;
-}
 
-.nav__item {
-  flex-grow: 1;
-  padding: 25px 5px 15px;
+  &__item {
+    flex-grow: 1;
+    padding: 25px 5px 15px;
 
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.nav__item.selected {
-  background-color: $select-color;
-  color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &.selected {
+      background-color: $select-color;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
 }
 
 .head-contacts {
