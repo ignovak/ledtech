@@ -316,6 +316,26 @@ h3 {
   }
 }
 
+.comment {
+  position: relative;
+  margin: 20px 45px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 15px;
+    margin-left: -45px;
+    background: $select-color;
+}
+
+  &__author {
+    margin: 5px 0;
+    color: $select-color;
+  }
+
+}
+
 footer {
   margin: 50px;
 }
