@@ -5,22 +5,22 @@ description: todo
 
 .showcase
 
-  %section
-    - 4.times do
-      .snippet
-        .snippet__thumb= image_tag 'assets/img/item.png'
-        %h3.snippet__title LED штендер
-        .snippet__description
-          Новаторская, простая, недорогая и эффективная рекламная технология
-        .snippet__more-link= link_to 'узнать больше…', '#'
-        .stickers
-          .price
-            цена:
-            %span.amount 111 грн
-          .order-link= link_to 'Заказать', '#'
+  ._catalog
+    %section
+      - 4.times do
+        .snippet
+          .snippet__thumb= image_tag 'assets/img/item.png'
+          %h3.snippet__title LED штендер
+          .snippet__description
+            Новаторская, простая, недорогая и эффективная рекламная технология
+          .snippet__more-link= link_to 'узнать больше…', '#'
+          .stickers
+            .price
+              цена:
+              %span.amount 111 грн
+            .order-link= link_to 'Заказать', '#'
 
-.banner._markers
-  %section
+  %section._markers
     %h3 Флуоресцентные маркеры 8 штук
     %p Флуоресцентные маркеры применяются для выполнения надписей и рисунков на нашей продукции.
     %p Маркеры изготовлены на водной основе, без запаха, легко стираются бумажной салфеткой.

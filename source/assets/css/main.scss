@@ -143,12 +143,55 @@ nav {
 }
 
 .showcase {
-  background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
+  background: url(../img/markers-l.png) 0 100% no-repeat, url(../img/markers-r.png) 100% 100% no-repeat;
+
+  ._catalog {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
+    }
+  }
 }
 
-.showcase section {
+section {
   width: 1000px;
   margin: auto;
+
+  &._markers {
+    height: 268px;
+    text-align: center;
+
+    h3 {
+      padding: 20px 0 30px;
+    }
+
+    .stickers {
+      margin-top: 25px;
+      padding: 3px 15px;
+
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+
+    .price {
+      float: left;
+    }
+
+    .order-link {
+      float: right;
+    }
+  }
 }
 
 .snippet {
@@ -210,11 +253,6 @@ h3 {
     background-color: $select-color;
   }
 
-  section {
-    width: 1000px;
-    margin: auto;
-  }
-
   h3 {
     padding: 20px 0 30px;
   }
@@ -231,25 +269,6 @@ h3 {
       content: '';
       clear: both;
     }
-  }
-
-  .stickers {
-    margin-top: 25px;
-    padding: 3px 15px;
-
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-  }
-
-  .price {
-    float: left;
-  }
-
-  .order-link {
-    float: right;
   }
 
   .thumb {
@@ -269,14 +288,8 @@ h3 {
 
   }
 
-  &._markers {
-    height: 268px;
-    background: url(../img/markers-l.jpg) no-repeat, url(../img/markers-r.jpg) 100% no-repeat;
-    text-align: center;
-  }
-
   &._features {
-    background: #555;
+    background: #555 url(../img/features-bg.png);
     color: #fff;
     text-align: justify;
 
@@ -309,7 +322,6 @@ h3 {
 
     }
   }
-
 
 }
 
