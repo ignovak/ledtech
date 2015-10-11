@@ -323,6 +323,30 @@ h3 {
     }
   }
 
+  &._feedback {
+    bottom: -40px;
+    background: url(../img/feedback-bg.png) 50% 100% no-repeat;
+
+    &:after {
+      bottom: -54px;
+    }
+
+    section {
+      margin-bottom: 90px;
+      overflow: visible;
+    }
+
+    .stickers {
+      position: relative;
+      bottom: -30px;
+      font-size: 22px;
+
+      .feedback__more-link {
+        float: right;
+      }
+    }
+  }
+
 }
 
 .gallery {

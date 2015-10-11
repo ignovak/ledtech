@@ -70,7 +70,7 @@ description: todo
     - 6.times do
       .carousel__item
 
-.banner
+.banner._feedback
   %section
     %h3
       %a{ name: 'feedback' } Отзывы
@@ -86,3 +86,7 @@ description: todo
     .comment
       .comment__author Pythagoras:
       “Rest satisfied with doing well, and leave others to talk of you as they please.”
+
+    .stickers
+      .feedback__more-link= link_to 'показать больше'
+      .feedback__add-link= link_to 'оставить свой отзыв'
