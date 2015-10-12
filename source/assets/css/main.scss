@@ -161,11 +161,17 @@ nav {
       z-index: -1;
       background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
     }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }
 }
 
 section {
-  width: $content-width;
+  max-width: $content-width;
   margin: auto;
 
   &._markers {
@@ -198,10 +204,7 @@ section {
 }
 
 .snippet {
-  display: inline-block;
-  width: 45%;
-  margin: 20px;
-  overflow: hidden; /* prevent collapse */
+  width: 50%;
 }
 
 .snippet__thumb {
@@ -415,11 +418,7 @@ footer {
     font-size: 13px;
   }
 
-  section {
-    width: auto;
-  }
-
-  ._feedback .stickers {
+  .stickers {
     padding: 0 10px;
   }
 
@@ -436,5 +435,9 @@ footer {
 
   .nav {
     display: block;
+  }
+
+  .snippet {
+    width: auto;
   }
 }
