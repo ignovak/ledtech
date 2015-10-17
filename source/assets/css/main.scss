@@ -75,15 +75,23 @@ a[href^=tel] {
 }
 
 header {
-  padding-top: 148px;
-  background: #eee url(../img/header.png) 80% 0 no-repeat;
-}
+  background: #eee;
 
-header:after {
-  content: '';
-  display: block;
-  height: 4px;
-  background-color: $select-color;
+  &:before, &:after {
+    content: '';
+    display: block;
+  }
+
+  &:before {
+    height: 148px;
+    background: url(../img/header.png) 80% 0 no-repeat;
+  }
+
+  &:after {
+    height: 4px;
+    background-color: $select-color;
+  }
+
 }
 
 .header__content {
@@ -412,10 +420,21 @@ footer {
 
 }
 
+@media all and (min-width: 1300px) {
+    header:before {
+        background-size: 100%;
+    }
+}
+
+@media all and (max-width: 1200px) {
+  .header__content {
+    font-size: 13px;
+  }
+}
+
 @media all and (max-width: 1023px) {
   .header__content {
     min-width: auto;
-    font-size: 13px;
   }
 
   .stickers {
