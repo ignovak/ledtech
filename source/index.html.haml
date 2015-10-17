@@ -133,4 +133,18 @@ description: todo
 
     .stickers
       .feedback__more-link= link_to 'показать больше'
-      .feedback__add-link= link_to 'оставить свой отзыв'
+      .feedback__add-link= link_to 'оставить свой отзыв', '#give_feedback'
+
+    .modal#give_feedback
+      .details
+        .close= link_to '×', '#'
+        %h3 Оставить отзыв
+        = form_tag 'feedback' do
+          %p
+            = label_tag :username, caption: 'Имя и фамилия'
+            = text_field_tag :username, placeholder: 'введите имя и фамилию'
+          %p
+            = label_tag :text, caption: 'Ваш отзыв'
+            ~ text_area_tag :text, placeholder: 'введите текст…'
+
+          %p= submit_tag 'Отправить отзыв'

@@ -199,9 +199,13 @@ nav {
       color: $select-color;
     }
 
-    label {
+    label, input[type=text], textarea {
       display: inline-block;
       width: 200px;
+    }
+
+    textarea {
+      height: 150px;
     }
 
     p {
