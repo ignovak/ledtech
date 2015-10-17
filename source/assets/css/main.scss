@@ -153,6 +153,55 @@ nav {
   color: $select-color;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  display: none;
+
+  background-color: rgba(0, 0, 0, .7);
+
+  &:target {
+    display: block;
+  }
+
+  .details {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    padding: 20px 30px;
+    overflow: scroll;
+
+    background-color: #fff;
+    text-align: justify;
+
+    .close {
+      float: right;
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+
+    h3 {
+      padding: 15px;
+      color: $select-color;
+    }
+
+  }
+}
+
 .showcase {
   background: url(../img/markers-l.png) 0 100% no-repeat, url(../img/markers-r.png) 100% 100% no-repeat;
 
