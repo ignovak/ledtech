@@ -199,6 +199,15 @@ nav {
       color: $select-color;
     }
 
+    label {
+      display: inline-block;
+      width: 200px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
   }
 }
 
@@ -353,8 +362,11 @@ h3 {
 
   &._features {
     background: #555 url(../img/features-bg.png);
-    color: #fff;
     text-align: justify;
+
+    section, h4 {
+      color: #fff;
+    }
 
     ul, p {
       padding: 0 15px;
