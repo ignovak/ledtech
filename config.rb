@@ -45,11 +45,11 @@ end
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def stylesheet_inline_tag css
+    "<style>#{sitemap.resources.select { |p| p.source_file.include?(css) }.first.render}</style>"
+  end
+end
 
 set :css_dir, 'assets/css'
 set :js_dir, 'assets/js'

@@ -81,7 +81,7 @@ header {
 
   &:before {
     height: 148px;
-    background: url(../img/header.png) 80% 0 no-repeat;
+    background: url(assets/img/header.png) 80% 0 no-repeat;
   }
 
   &:after {
@@ -101,7 +101,7 @@ header {
 .logo {
   width: 200px;
   height: 70px;
-  background: url(../img/logo.png) 50% 50% no-repeat;
+  background: url(assets/img/logo.png) 50% 50% no-repeat;
 }
 
 nav {
@@ -227,7 +227,7 @@ nav {
 }
 
 .showcase {
-  background: url(../img/markers-l.png) 0 100% no-repeat, url(../img/markers-r.png) 100% 100% no-repeat;
+  background: url(assets/img/markers-l.png) 0 100% no-repeat, url(assets/img/markers-r.png) 100% 100% no-repeat;
 
   ._catalog {
     position: relative;
@@ -376,7 +376,7 @@ h3 {
   }
 
   &._features {
-    background: #555 url(../img/features-bg.png);
+    background: #555 url(assets/img/features-bg.png);
     text-align: justify;
 
     section, h4 {
@@ -415,7 +415,7 @@ h3 {
 
   &._feedback {
     bottom: -40px;
-    background: url(../img/feedback-bg.png) 50% 100% no-repeat;
+    background: url(assets/img/feedback-bg.png) 50% 100% no-repeat;
 
     &:after {
       bottom: -54px;

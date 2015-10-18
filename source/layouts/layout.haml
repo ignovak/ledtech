@@ -9,7 +9,7 @@
     %title= data.page.title || "SET YOUR SITE NAME"
     %meta{:content => data.page.description || "SET YOUR SITE DESCRIPTION", :name => "description"}
     %meta{:content => "width=device-width", :name => "viewport"}
-    = stylesheet_link_tag "main"
+    = stylesheet_inline_tag "main"
   %body
     %header
       .header__content
