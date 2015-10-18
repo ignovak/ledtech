@@ -201,6 +201,16 @@ nav {
       width: 200px;
     }
 
+    input[type=submit] {
+      padding: 3px 20px;
+      border: none;
+      background: none;
+      box-shadow: 0 0 0 2px $select-color;
+      font-size: 14px;
+      color: $select-color;
+      cursor: pointer;
+    }
+
     textarea {
       height: 150px;
     }
@@ -209,6 +219,10 @@ nav {
       margin: 10px 0;
     }
 
+  }
+
+  &#give_feedback .details {
+    background: #eee;
   }
 }
 

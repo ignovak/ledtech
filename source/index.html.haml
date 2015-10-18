@@ -146,5 +146,6 @@ description: todo
           %p
             = label_tag :text, caption: 'Ваш отзыв'
             ~ text_area_tag :text, placeholder: 'введите текст…'
-
-          %p= submit_tag 'Отправить отзыв'
+          %p
+            = label_tag :stub, caption: ''
+            = submit_tag 'Отправить отзыв'

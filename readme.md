@@ -13,7 +13,6 @@ middleman server
 See https://github.com/middleman/middleman
 
 ### TODO
-* Запилить динамику (попапы по ссылкам)
 * Допилить SEO (title, description, мета-теги для социальных сетей)
 * Допилить сниппеты (но сначала дообсуждать дизайн)
 * Допилить pixel perfect
