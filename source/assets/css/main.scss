@@ -72,22 +72,6 @@ a[href^=tel] {
 }
 
 header {
-  background: #eee;
-
-  &:before, &:after {
-    content: '';
-    display: block;
-  }
-
-  &:before {
-    height: 148px;
-    background: url(assets/img/header.png) 80% 0 no-repeat;
-  }
-
-  &:after {
-    height: 4px;
-    background-color: $select-color;
-  }
 
 }
 
@@ -116,12 +100,9 @@ nav {
     padding: 30px 5px 20px;
 
     text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
 
     &.selected {
-      background-color: $select-color;
-      color: #fff;
+      color: $select-color;
     }
 
     a {
@@ -129,13 +110,6 @@ nav {
       color: #000;
     }
   }
-}
-
-.head-contacts {
-  margin: 12px 20px;
-  font-size: 13px;
-  line-height: 1.2;
-  text-align: right;
 }
 
 .order-link a {

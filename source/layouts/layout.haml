@@ -16,19 +16,18 @@
         .logo
         %nav
           %ul.nav
-            %li.nav__item.selected Наш ассортимент
+            %li.nav__item.selected Главная
             %li.nav__item= link_to 'Зачем использовать', '#why_use'
-            %li.nav__item= link_to 'Рассчитать цены', '#price'
+            %li.nav__item= link_to 'Рассчитать размеры', '#calculate'
             %li.nav__item= link_to 'Галерея', '#gallery'
             %li.nav__item= link_to 'Отзывы', '#feedback'
-        .head-contacts
-          %p= link_to '+38 (095) 308 21 06', 'tel:38-095-308-2106'
-          %p= link_to '+38 (098) 111 89 26', 'tel:38-098-111-8926'
-          %p= link_to 'ledtech.ua@gmail.com', 'mailto:ledtech.ua@gmail.com'
+            %li.nav__item= link_to 'Контакты', '#contacts'
     %div{:role => "main", :class => "main"}= yield
     %footer
+      %h4
+        %a{ name: 'contacts' } Контакты
       .links
         = succeed ';' do
           = link_to '+38 (095) 308 21 06', 'tel:38-095-308-2106'
         = link_to '+38 (098) 111 89 26', 'tel:38-098-111-8926'
-      .links= link_to 'ledtech.ua@gmail.com', 'mailto:ledtech.ua@gmail.com'
+      .links= link_to 'good.shop.ua@gmail.com', 'mailto:good.shop.ua@gmail.com'
