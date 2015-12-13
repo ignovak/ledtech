@@ -121,7 +121,8 @@ nav {
 }
 
 .price .amount {
-  color: $select-color;
+  font-size: 36px;
+  font-weight: bold;
 }
 
 .modal {
@@ -212,24 +213,10 @@ section {
       padding: 20px 0 30px;
     }
 
-    .stickers {
-      margin-top: 25px;
-      padding: 3px 15px;
-
-      &:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-    }
-
-    .price {
-      float: left;
-    }
-
-    .order-link {
+    img {
       float: right;
     }
+
   }
 }
 
@@ -255,11 +242,6 @@ section {
     margin: 10px;
     font-size: 24px;
     text-transform: uppercase;
-  }
-
-  .amount {
-    font-size: 36px;
-    font-weight: bold;
   }
 
 }
