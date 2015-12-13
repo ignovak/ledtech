@@ -18,7 +18,7 @@ creator@project.com @ Creator Company
 
 $base-color: #000;
 $highlight-color: #ea2427;
-$select-color: #242cdc;
+$select-color: #80c;
 
 $content-width: 1000px;
 
@@ -200,31 +200,6 @@ nav {
   }
 }
 
-.showcase {
-  background: url(assets/img/markers-l.png) 0 100% no-repeat, url(assets/img/markers-r.png) 100% 100% no-repeat;
-
-  ._catalog {
-    position: relative;
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      background: linear-gradient(to bottom, #fff, #fff 40%, #ccc);
-    }
-
-    section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-  }
-}
-
 section {
   max-width: $content-width;
   margin: auto;
@@ -258,43 +233,42 @@ section {
   }
 }
 
+._catalog {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .snippet {
-  width: 50%;
+
+  width: 300px;
+  text-align: center;
+
+  &__thumb {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  .amount {
+    font-size: 36px;
+    font-weight: bold;
+  }
+
 }
 
-.snippet__thumb {
-  margin: 0 20px;
-  float: left;
-}
-
-.snippet__title {
-  margin: 10px;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
-.snippet__description {
-  text-transform: uppercase;
-}
-
-.snippet__more-link a {
-  margin-top: 10px;
-  color: #666;
-}
-
-.snippet .stickers {
-  margin-top: 60px;
-}
-
-.snippet .price {
-  float: right;
-}
-
-h3, h4 {
+h2, h3, h4 {
   text-align: center;
 }
 
-h3 {
+h2, h3 {
   font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
@@ -347,6 +321,12 @@ h3 {
       margin-left: 20px;
     }
 
+  }
+
+  &._promo {
+    background: $select-color;
+    height: 400px;
+    color: #fff;
   }
 
   &._features {

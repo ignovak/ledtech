@@ -27,7 +27,7 @@
       %h4
         %a{ name: 'contacts' } Контакты
       .links
-        = succeed ';' do
-          = link_to '+38 (095) 308 21 06', 'tel:38-095-308-2106'
-        = link_to '+38 (098) 111 89 26', 'tel:38-098-111-8926'
+        = succeed ',' do
+          = link_to data.content.phone1, 'tel:+38-095-180-2253'
+        = link_to data.content.phone2, 'tel:+38-050-805-4111'
       .links= link_to 'good.shop.ua@gmail.com', 'mailto:good.shop.ua@gmail.com'
