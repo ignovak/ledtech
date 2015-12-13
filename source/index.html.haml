@@ -102,39 +102,35 @@ description: todo
         %li теперь число ваших клиентое заметно увеличится, так как новое предложение сразу же будет замечено и оценено по достоинству;
         %li неоновые доски — это отличный технологический подход.  необходимый для ведения современного бизнеса.
 
-  .banner__footer
-    %h4
-      %a{ name: 'calculate' }  Сделать расчет LED-доски по индивидуальным размерам Вы можете сделать прямо тут.
-    .order-link= link_to 'Рассчитать', '#calculate'
-    .modal#calculate
-      .details
-        .close= link_to '×', '#'
-        %h3 Рассчитать цену
-        = form_tag 'calculate' do
-          %p
-            = label_tag :product, caption: 'Вид товара'
-            = select_tag :product, options: %w(выбрать)
-          %p
-            = label_tag :construction, caption: 'Тип конструкции'
-            = select_tag :construction, options: %w(выбрать)
-          %p
-            = label_tag :surface, caption: 'Материал поверхности'
-            = select_tag :surface, options: %w(выбрать)
-          %p
-            = label_tag :size, caption: 'Размеры внутренние'
-            = select_tag :size, options: %w(выбрать)
-          %p
-            = label_tag :background, caption: 'Тип фона'
-            = select_tag :background, options: %w(выбрать)
-          %br
-          %p
-            = label_tag :username, caption: 'Как к Вам обращаться'
-            = select_tag :username, options: %w(выбрать)
-          %p
-            = label_tag :email, caption: 'Ваш Е-mail'
-            = select_tag :email, options: %w(выбрать)
+  %section.banner__footer
+    %h3
+      %a{ name: 'calculate' } Расчет стоимости LED-изделия
+    %h4 по индивидуальным размерам
+    = form_tag 'calculate' do
+      %p
+        = label_tag :product, caption: 'Вид товара'
+        = select_tag :product, options: %w(выбрать)
+      %p
+        = label_tag :construction, caption: 'Тип конструкции'
+        = select_tag :construction, options: %w(выбрать)
+      %p
+        = label_tag :surface, caption: 'Материал поверхности'
+        = select_tag :surface, options: %w(выбрать)
+      %p
+        = label_tag :size, caption: 'Размеры внутренние'
+        = select_tag :size, options: %w(выбрать)
+      %p
+        = label_tag :background, caption: 'Тип фона'
+        = select_tag :background, options: %w(выбрать)
+      %br
+      %p
+        = label_tag :username, caption: 'Ваше имя'
+        = select_tag :username, options: %w(выбрать)
+      %p
+        = label_tag :email, caption: 'Ваш е-mail'
+        = select_tag :email, options: %w(выбрать)
 
-          %p= submit_tag 'Отправить менеджеру'
+      %p= submit_tag 'Отправить'
 
 .gallery
   %h3

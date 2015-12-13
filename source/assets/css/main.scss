@@ -18,7 +18,7 @@ creator@project.com @ Creator Company
 
 $base-color: #000;
 $highlight-color: #ea2427;
-$select-color: #80c;
+$select-color: #60a;
 
 $content-width: 1000px;
 
@@ -69,6 +69,29 @@ GLOBAL LAYOUT
 
 a[href^=tel] {
   text-decoration: none;
+}
+
+form {
+
+  label, input[type=text], textarea {
+    display: inline-block;
+    width: 200px;
+  }
+
+  input[type=submit] {
+    padding: 3px 20px;
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 2px $select-color;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
 }
 
 header {
@@ -171,25 +194,6 @@ nav {
       color: $select-color;
     }
 
-    label, input[type=text], textarea {
-      display: inline-block;
-      width: 200px;
-    }
-
-    input[type=submit] {
-      padding: 3px 20px;
-      border: none;
-      background: none;
-      box-shadow: 0 0 0 2px $select-color;
-      font-size: 14px;
-      color: $select-color;
-      cursor: pointer;
-    }
-
-    textarea {
-      height: 150px;
-    }
-
     p {
       margin: 10px 0;
     }
@@ -206,7 +210,7 @@ section {
   margin: auto;
 
   &._markers {
-    height: 268px;
+    overflow: hidden;
     text-align: center;
 
     h3 {
@@ -288,23 +292,6 @@ h2, h3 {
     }
   }
 
-  .thumb {
-    background: #000;
-    width: 480px;
-    height: 250px;
-
-    &._left {
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
-
-    &._right {
-      margin-top: 20px;
-      margin-left: 20px;
-    }
-
-  }
-
   &._promo {
     background: $select-color;
     height: 400px;
@@ -312,40 +299,29 @@ h2, h3 {
   }
 
   &._features {
-    background: #555 url(assets/img/features-bg.png);
-    text-align: justify;
+    background: $select-color url(assets/img/features-bg.png);
 
     section, h4 {
       color: #fff;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      li {
+        width: 230px;
+        text-align: center;
+      }
     }
 
     ul, p {
       padding: 0 15px;
     }
 
-    li:before {
-      content: '- ';
-    }
-
     .banner__footer {
-      background: #2a2a2a;
       margin-top: 20px;
-
-      .order-link {
-        font-size: 22px;
-        padding-bottom: 30px;
-        float: none;
-        text-align: center;
-        text-transform: uppercase;
-
-        a {
-          padding: 5px 50px;
-          color: $select-color;
-          background: none;
-          box-shadow: 0 0 0 2px $select-color;
-        }
-      }
-
     }
   }
 
