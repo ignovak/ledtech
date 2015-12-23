@@ -105,7 +105,7 @@ header {
     max-width: $content-width;
     margin: auto;
     font-family: 'Roboto Regular', sans-serif;
-    font-size: 16pt;
+    font-size: 16px;
 }
 
 .header__content {
@@ -118,7 +118,7 @@ header {
 .logo {
   width: 200px;
   height: 70px;
-  background: url(../img/logo.png) 50% 50% no-repeat;
+  background: url(../img/logo.png) 20px 20px no-repeat;
 }
 
 nav {
@@ -126,11 +126,11 @@ nav {
 }
 
 .nav {
-  display: flex;
+  text-align: right;
 
   &__item {
-    flex-grow: 1;
-    padding: 30px 5px 20px;
+    display: inline-block;
+    padding: 25px 15px;
 
     text-align: center;
 
@@ -264,12 +264,6 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-h2, h3 {
-  font-size: 22px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 .banner {
   position: relative;
   margin-bottom: 4px;
@@ -282,10 +276,6 @@ h2, h3 {
     bottom: -4px;
     height: 4px;
     background-color: $select-color;
-  }
-
-  h3 {
-    padding: 20px 0 30px;
   }
 
   h4 {
@@ -306,8 +296,27 @@ h2, h3 {
     background-color: $select-color;
     background-image: linear-gradient(to right, $gradient-left-color, $gradient-right-color);
     background-image: url(../img/promo.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     height: 755px;
     color: #fff;
+
+    h1 {
+      padding-top: 140px;
+    }
+
+    h2 {
+      padding-top: 20px;
+    }
+
+    h3 {
+      margin-top: 25px;
+      padding: 15px;
+      background: url(../img/h3-bg.png) 50% 50% no-repeat;
+      font-family: 'Roboto Regular', sans-serif;
+      font-size: 18px;
+      color: #000;
+    }
   }
 
   &._features {
