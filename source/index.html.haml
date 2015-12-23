@@ -7,7 +7,7 @@ description: todo
   %h1= image_tag "assets/img/h1-content.png", alt: "LED-Доски"
   %h2= image_tag "assets/img/h2-content.png", alt: "Сделаем рекламу ярче"
   %h3 Прекрасная альтернатива стандартной меловой доске
-  %h4= data.content.phone1
+  %h4= data.content.phone1.gsub /[()]/, ''
 
 %section
   %h2 LED-доска для рекламы
