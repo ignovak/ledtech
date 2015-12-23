@@ -56,6 +56,11 @@ GLOBAL LAYOUT
 
 ///////////////////////////////////////////////////// */
 
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url(../fonts/RobotoRegular/RobotoRegular.ttf);
+}
+
 .wrapper {
   width: 960px;
   margin: 0 auto;
@@ -99,6 +104,8 @@ form {
 header {
     max-width: $content-width;
     margin: auto;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 16pt;
 }
 
 .header__content {
