@@ -136,8 +136,8 @@ header {
 
   .logo {
     width: 200px;
-    height: 70px;
-    background: url(../img/logo.png) 20px 20px no-repeat;
+    height: 69px;
+    background: url(../img/logo.png) 15px 20px no-repeat;
   }
 
   nav {
@@ -149,7 +149,7 @@ header {
 
     &__item {
       display: inline-block;
-      padding: 25px 15px;
+      padding: 24px 15px 20px;
 
       text-align: center;
 
@@ -292,7 +292,7 @@ section {
   max-width: $content-width;
   margin: auto;
   text-align: center;
-  padding: 85px 0;
+  padding: 90px 0;
 
   h2 {
     font-family: 'Roboto Bold', sans-serif;
@@ -374,10 +374,19 @@ section {
       }
     }
   }
+}
 
-  /* .banner__footer { */
-  /*   margin-top: 20px; */
-  /* } */
+.form {
+  background-image: linear-gradient(to right, $gradient-left-color, $background-dark-color);
+  color: #fff;
+
+  h3 {
+    margin: 25px 0 25px;
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
 }
 
 h1, h2, h3, h4 {
@@ -386,25 +395,26 @@ h1, h2, h3, h4 {
 
 .banner {
   position: relative;
-  margin-bottom: 4px;
 
-  &:after {
-    /* content: ''; */
+  &:after, &:before {
+    content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 4px;
-    background-color: $select-color;
+    width: 100%;
+    height: 8px;
   }
 
-  section {
-    overflow: hidden;
+  &:before {
+    top: 5px;
+    background-image: url(../img/edging-top.png);
+  }
 
-    &:after {
-      content: '';
-      clear: both;
-    }
+  &:after {
+    bottom: 5px;
+    background-image: url(../img/edging-bottom.png);
+  }
+
+  &.features:after, &.form:before {
+    content: none;
   }
 
   &._feedback {
