@@ -339,7 +339,45 @@ section {
   .price {
     margin-top: 40px;
   }
+}
 
+.features {
+  background: $select-color url(../img/features-bg.jpg) 50% 0 no-repeat;
+  color: #fff;
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 50px;
+
+    .snippet {
+      width: 250px;
+      height: 230px;
+      padding-top: 30px;
+
+      &__description {
+        font-family: 'Roboto Medium', sans-serif;
+      }
+
+      &:nth-child(1) {
+        background: url(../img/feature1-bg.png) 50% 50% no-repeat;
+      }
+      &:nth-child(2) {
+        background: url(../img/feature2-bg.png) 50% 50% no-repeat;
+      }
+      &:nth-child(3) {
+        background: url(../img/feature3-bg.png) 50% 50% no-repeat;
+      }
+      &:nth-child(4) {
+        background: url(../img/feature4-bg.png) 50% 50% no-repeat;
+      }
+    }
+  }
+
+  /* .banner__footer { */
+  /*   margin-top: 20px; */
+  /* } */
 }
 
 h1, h2, h3, h4 {
@@ -366,33 +404,6 @@ h1, h2, h3, h4 {
     &:after {
       content: '';
       clear: both;
-    }
-  }
-
-  &._features {
-    background: $select-color url(../img/features-bg.png);
-
-    section, h4 {
-      color: #fff;
-    }
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-
-      li {
-        width: 230px;
-        text-align: center;
-      }
-    }
-
-    ul, p {
-      padding: 0 15px;
-    }
-
-    .banner__footer {
-      margin-top: 20px;
     }
   }
 
@@ -426,7 +437,7 @@ h1, h2, h3, h4 {
   background-color: $select-color;
   background-image: linear-gradient(to right, $gradient-left-color, $background-dark-color);
   background-image: url(../img/promo.jpg);
-  background-position: 50% 50%;
+  background-position: 50% 0;
   background-repeat: no-repeat;
   height: 755px;
   color: #fff;
