@@ -20,9 +20,9 @@ $base-color: #000;
 $highlight-color: #ea2427;
 $select-color: #60a;
 $gradient-left-color: #6d0985;
-$gradient-right-color: #3a0378;
-
-$content-width: 1200px;
+$background-dark-color: #3a037a;
+$border-dark-color: #674097;
+$content-width: 1180px;
 
 $body-font: Helvetica, Arial, sans-serif;
 
@@ -64,6 +64,16 @@ GLOBAL LAYOUT
 @font-face {
   font-family: 'Roboto Bold';
   src: url(../fonts/RobotoBold/RobotoBold.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  src: url(../fonts/RobotoLight/RobotoLight.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url(../fonts/RobotoMedium/RobotoMedium.ttf);
 }
 
 @font-face {
@@ -112,60 +122,74 @@ form {
 }
 
 header {
-    max-width: $content-width;
-    margin: auto;
-    font-family: 'Roboto Regular', sans-serif;
-    font-size: 16px;
-}
-
-.header__content {
-  min-width: 1024px;
-  max-width: 1280px;
-  display: flex;
+  max-width: $content-width;
   margin: auto;
-}
+  font-family: 'Roboto Regular', sans-serif;
+  font-size: 16px;
 
-.logo {
-  width: 200px;
-  height: 70px;
-  background: url(../img/logo.png) 20px 20px no-repeat;
-}
+  .header__content {
+    min-width: 1024px;
+    max-width: 1280px;
+    display: flex;
+    margin: auto;
+  }
 
-nav {
-  flex-grow: 1;
-}
+  .logo {
+    width: 200px;
+    height: 70px;
+    background: url(../img/logo.png) 20px 20px no-repeat;
+  }
 
-.nav {
-  text-align: right;
+  nav {
+    flex-grow: 1;
+  }
 
-  &__item {
-    display: inline-block;
-    padding: 25px 15px;
+  .nav {
+    text-align: right;
 
-    text-align: center;
+    &__item {
+      display: inline-block;
+      padding: 25px 15px;
 
-    &.selected {
-      color: $select-color;
-    }
+      text-align: center;
 
-    a {
-      text-decoration: none;
-      color: #000;
+      &.selected {
+        color: $select-color;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
     }
   }
 }
 
-.order-link a {
-  padding: 2px 15px;
-  color: $base-color;
-  background: #9195ed;
-  box-shadow: 0 0 0 2px #99d;
-  text-decoration: none;
+.order-link {
+  margin: 36px 0 24px;
+
+  a {
+    padding: 12px 60px;
+    background: $background-dark-color;
+    box-shadow: 0 0 0 1px $border-dark-color;
+    font-family: 'Roboto Medium', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }
 
-.price .amount {
-  font-size: 36px;
+.price {
+  margin: 10px;
+  font-family: 'Roboto Medium', sans-serif;
+  font-size: 14px;
   font-weight: bold;
+
+  .amount {
+    font-size: 46px;
+  }
+
 }
 
 .modal {
@@ -225,57 +249,7 @@ nav {
   }
 }
 
-section {
-  max-width: $content-width;
-  margin: auto;
-  text-align: center;
-
-  h2 {
-    margin-top: 85px;
-    font-family: 'Roboto Bold', sans-serif;
-    font-size: 36px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  h3 {
-    margin-top: 25px;
-    font-family: 'Roboto Regular', sans-serif;
-    font-size: 17px;
-    text-transform: uppercase;
-  }
-
-  p {
-    width: 65%;
-    margin: 20px auto;
-    line-height: 1.5;
-  }
-
-  &._markers {
-    overflow: hidden;
-    text-align: center;
-
-    h3 {
-      padding: 20px 0 30px;
-    }
-
-    img {
-      float: right;
-    }
-
-  }
-}
-
-._catalog {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .snippet {
-
-  width: 300px;
   text-align: center;
 
   &__thumb {
@@ -285,9 +259,85 @@ section {
   }
 
   &__title {
-    margin: 10px;
-    font-size: 24px;
+    margin: 30px 0 25px;
+    font-family: 'Roboto Bold', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
     text-transform: uppercase;
+  }
+
+  &__description {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 15px;
+  }
+}
+
+.annotation {
+  &__subtitle {
+    margin-top: 25px;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    width: 60%;
+    margin: 25px auto 0;
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 15px;
+  }
+}
+
+section {
+  max-width: $content-width;
+  margin: auto;
+  text-align: center;
+  padding: 85px 0;
+
+  h2 {
+    font-family: 'Roboto Bold', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+}
+
+.catalog {
+  background-color: #f5f6f8;
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
+  }
+
+  .snippet {
+    width: 360px;
+
+    &__description {
+      min-height: 100px;
+    }
+  }
+}
+
+.markers {
+  overflow: hidden;
+
+  img {
+    float: right;
+    margin: 0 15px;
+  }
+
+  .snippet {
+    &__description {
+      margin: 10px 15px 0 0;
+    }
+  }
+
+  .price {
+    margin-top: 40px;
   }
 
 }
@@ -310,60 +360,12 @@ h1, h2, h3, h4 {
     background-color: $select-color;
   }
 
-  h4 {
-    padding: 40px 0;
-    font-size: 20px;
-  }
-
   section {
     overflow: hidden;
 
     &:after {
       content: '';
       clear: both;
-    }
-  }
-
-  &._promo {
-    background-color: $select-color;
-    background-image: linear-gradient(to right, $gradient-left-color, $gradient-right-color);
-    background-image: url(../img/promo.jpg);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    height: 755px;
-    color: #fff;
-
-    h1 {
-      padding-top: 140px;
-    }
-
-    h2 {
-      padding-top: 20px;
-    }
-
-    h3 {
-      margin-top: 25px;
-      padding: 15px;
-      background: url(../img/h3-bg.png) 50% 50% no-repeat;
-      font-family: 'Roboto Regular', sans-serif;
-      font-size: 18px;
-      color: #000;
-    }
-
-    h4 {
-      padding: 50px;
-      font-family: 'Signpainter', sans-serif;
-      font-weight: bold;
-      font-size: 50px;
-
-      &:before {
-        content: '';
-        display: inline-block;
-        width: 45px;
-        height: 40px;
-        background: url(../img/phone-icon.png) 0 0 no-repeat;
-        transform: translateY(5px);
-      }
     }
   }
 
@@ -418,6 +420,49 @@ h1, h2, h3, h4 {
     }
   }
 
+}
+
+.promo {
+  background-color: $select-color;
+  background-image: linear-gradient(to right, $gradient-left-color, $background-dark-color);
+  background-image: url(../img/promo.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 755px;
+  color: #fff;
+
+  &__title {
+    padding-top: 140px;
+  }
+
+  &__subtitle {
+    padding-top: 20px;
+  }
+
+  &__description {
+    margin-top: 20px;
+    padding: 15px;
+    background: url(../img/h3-bg.png) 50% 50% no-repeat;
+    font-family: 'Roboto Regular', sans-serif;
+    font-size: 18px;
+    color: #000;
+  }
+
+  h4 {
+    padding: 55px;
+    font-family: 'Signpainter', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 45px;
+      height: 40px;
+      background: url(../img/phone-icon.png) 0 0 no-repeat;
+      transform: translateY(5px);
+    }
+  }
 }
 
 .gallery {
