@@ -106,9 +106,11 @@ description: todo
 .banner.form
   %section
     %h2
-      %a{ name: 'calculate' } Рассчёт стоимости LED-изделия
+      %a{ name: "calculate" } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
-    = form_tag 'calculate' do
+    = form_tag "//formspree.io/bezengi@gmail.com" do
+      = hidden_field_tag :_next, value: "//localhost:4567"
+      = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
       .form__column
         %p
           = label_tag :product, caption: "Вид товара"
@@ -131,7 +133,7 @@ description: todo
           = text_field_tag :username, placeholder: "Имя"
         %p
           = label_tag :email, caption: "Ваш е-mail"
-          = text_field_tag :email, placeholder: "E-mail"
+          = email_field_tag :email, placeholder: "E-mail"
         %p.note * Поля являются обязательными
 
       %p= submit_tag "Отправить"

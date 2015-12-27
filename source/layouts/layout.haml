@@ -32,3 +32,5 @@
           = link_to data.content.phone1, 'tel:+38-095-180-2253'
         = link_to data.content.phone2, 'tel:+38-050-805-4111'
       .links= link_to 'good.shop.ua@gmail.com', 'mailto:good.shop.ua@gmail.com'
+    :javascript
+      document.querySelector('[name=_next]').value = location.href;
