@@ -1,12 +1,11 @@
-.custom-dropdown__select {
-  font-size: inherit; /* inherit size from .custom-dropdown */
-  padding: .5em; /* add some space*/
-  margin: 0; /* remove default margins */
-}
+/* http://red-team-design.com/making-html-dropdowns-not-suck/ */
 
-.custom-dropdown__select--white {
-  background-color: #fff;
-  color: #444;
+.custom-dropdown > select {
+  font-size: inherit; /* inherit size from .custom-dropdown */
+  padding: $form-field-padding; /* add some space*/
+  margin: 0; /* remove default margins */
+  width: 100%;
+  display: inline-block;
 }
 
 @supports (pointer-events: none) and
@@ -16,13 +15,13 @@
 
   .custom-dropdown {
     position: relative;
-    display: inline-block;
     vertical-align: middle;
   }
 
-  .custom-dropdown__select {
+  .custom-dropdown > select {
     padding-right: 2.5em; /* accommodate with the pseudo elements for the dropdown arrow */
     border: 0;
+    border-radius: 0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -30,31 +29,32 @@
 
   .custom-dropdown::before,
   .custom-dropdown::after {
-    content: '';
     position: absolute;
     pointer-events: none;
-  }
-
-  .custom-dropdown::after { /*  Custom dropdown arrow */
-    content: '▿';
-    height: 1em;
-    font-size: .625em;
-    line-height: 1;
-    right: 1.2em;
-    top: 50%; margin-top: -.5em;
-  }
-
-  .custom-dropdown::before { /*  Custom dropdown arrow cover */
-    width: 2em;
-    right: 0; top: 0; bottom: 0;
+    top: 0;
+    right: 0;
+    width: 40px;
     background-color: $background-light-color;
+  }
+
+  .custom-dropdown::before { /*  Custom dropdown arrow */
+    content: '▿';
+    font-size: 24px;
+    line-height: 1.6;
+    bottom: 0;
+    text-align: center;
+  }
+
+  .custom-dropdown::after { /*  Custom dropdown arrow cover */
+    content: '';
+    height: 19px;
   }
 
   /* FF only temporary & ugly fixes */
   /* the "appearance: none" applied on select still shows a dropdown arrow on Firefox */
   /* https://bugzilla.mozilla.org/show_bug.cgi?id=649849 */
   @-moz-document url-prefix() {
-    .custom-dropdown__select { padding-right: .9em }
+    .custom-dropdown > select { padding-right: .9em }
   }
 
 }

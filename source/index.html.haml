@@ -106,38 +106,35 @@ description: todo
 .banner.form
   %section
     %h2
-      %a{ name: 'calculate' } Расчет стоимости LED-изделия
+      %a{ name: 'calculate' } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
     = form_tag 'calculate' do
-      %span.custom-dropdown.custom-dropdown--white
-        %select.custom-dropdown__select.custom-dropdown__select--white
-          %option>The Shawshank Redemption
-          %option>The Godfather
-          %option>Pulp Fiction
-      %p
-        = label_tag :product, caption: 'Вид товара'
-        = select_tag :product, options: %w(выбрать)
-      %p
-        = label_tag :construction, caption: 'Тип конструкции'
-        = select_tag :construction, options: %w(выбрать)
-      %p
-        = label_tag :surface, caption: 'Материал поверхности'
-        = select_tag :surface, options: %w(выбрать)
-      %p
-        = label_tag :size, caption: 'Размеры внутренние'
-        = select_tag :size, options: %w(выбрать)
-      %p
-        = label_tag :background, caption: 'Тип фона'
-        = select_tag :background, options: %w(выбрать)
-      %br
-      %p
-        = label_tag :username, caption: 'Ваше имя'
-        = select_tag :username, options: %w(выбрать)
-      %p
-        = label_tag :email, caption: 'Ваш е-mail'
-        = select_tag :email, options: %w(выбрать)
+      .form__column
+        %p
+          = label_tag :product, caption: "Вид товара"
+          .custom-dropdown= select_tag :product, options: %w(LED-штендер)
+        %p
+          = label_tag :construction, caption: "Тип конструкции *"
+          .custom-dropdown= select_tag :construction, options: %w(LED-доска)
+        %p
+          = label_tag :surface, caption: "Материал поверхности *"
+          .custom-dropdown= select_tag :surface, options: %w(выбрать)
+      .form__column
+        %p
+          = label_tag :size, caption: "Размеры внутренние *"
+          .custom-dropdown= select_tag :size, options: %w(выбрать)
+        %p
+          = label_tag :background, caption: "Тип фона *"
+          .custom-dropdown= select_tag :background, options: %w(выбрать)
+        %p
+          = label_tag :username, caption: "Ваше имя"
+          = text_field_tag :username, placeholder: "Имя"
+        %p
+          = label_tag :email, caption: "Ваш е-mail"
+          = text_field_tag :email, placeholder: "E-mail"
+        %p.note * Поля являются обязательными
 
-      %p= submit_tag 'Отправить'
+      %p= submit_tag "Отправить"
 
 .gallery
   %h3
