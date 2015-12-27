@@ -109,6 +109,11 @@ description: todo
       %a{ name: 'calculate' } Расчет стоимости LED-изделия
     %h3 по индивидуальным размерам
     = form_tag 'calculate' do
+      %span.custom-dropdown.custom-dropdown--white
+        %select.custom-dropdown__select.custom-dropdown__select--white
+          %option>The Shawshank Redemption
+          %option>The Godfather
+          %option>Pulp Fiction
       %p
         = label_tag :product, caption: 'Вид товара'
         = select_tag :product, options: %w(выбрать)

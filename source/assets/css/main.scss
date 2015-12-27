@@ -19,7 +19,7 @@ creator@project.com @ Creator Company
 $base-color: #000;
 $highlight-color: #ea2427;
 $select-color: #60a;
-$gradient-left-color: #6d0985;
+$background-light-color: #6d0985;
 $background-dark-color: #3a037a;
 $border-dark-color: #674097;
 $content-width: 1180px;
@@ -48,6 +48,7 @@ $break-small: 480px;
 @import "modules";
 @import "pages";
 
+@import "custom-select";
 
 
 /* /////////////////////////////////////////////////////
@@ -377,7 +378,7 @@ section {
 }
 
 .form {
-  background-image: linear-gradient(to right, $gradient-left-color, $background-dark-color);
+  background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   color: #fff;
 
   h3 {
@@ -445,7 +446,7 @@ h1, h2, h3, h4 {
 
 .promo {
   background-color: $select-color;
-  background-image: linear-gradient(to right, $gradient-left-color, $background-dark-color);
+  background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   background-image: url(../img/promo.jpg);
   background-position: 50% 0;
   background-repeat: no-repeat;
