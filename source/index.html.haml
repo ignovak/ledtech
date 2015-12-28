@@ -173,3 +173,13 @@ description: todo
           %p
             = label_tag :stub, caption: ''
             = submit_tag 'Отправить отзыв'
+
+.banner.contacts
+  %section
+    %h2
+      %a{ name: 'contacts' } Контакты
+    .contacts__phone
+      = succeed ',' do
+        = link_to data.content.phone1, 'tel:+38-095-180-2253'
+      = link_to data.content.phone2, 'tel:+38-050-805-4111'
+    .contacts__email= link_to 'good.shop.ua@gmail.com', 'mailto:good.shop.ua@gmail.com'

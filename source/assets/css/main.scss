@@ -98,7 +98,7 @@ GLOBAL LAYOUT
   float: right;
 }
 
-a[href^=tel] {
+a {
   text-decoration: none;
 }
 
@@ -139,7 +139,6 @@ header {
       }
 
       a {
-        text-decoration: none;
         color: #000;
       }
     }
@@ -156,7 +155,6 @@ header {
     font-family: 'Roboto Medium', sans-serif;
     font-size: 16px;
     color: #fff;
-    text-decoration: none;
     text-transform: uppercase;
   }
 }
@@ -210,7 +208,6 @@ header {
 
       a {
         color: #000;
-        text-decoration: none;
       }
     }
 
@@ -466,7 +463,6 @@ section {
       font-family: 'Roboto Medium', sans-serif;
       font-size: 16px;
       color: #000;
-      text-decoration: none;
       text-transform: uppercase;
     }
   }
@@ -501,6 +497,7 @@ h1, h2, h3, h4 {
   &.features:after,
   &.form:before,
   &.feedback:after,
+  &.contacts:after
   {
     content: none;
   }
@@ -575,14 +572,26 @@ h1, h2, h3, h4 {
   }
 }
 
-footer {
-  background: #eee;
-  padding: 30px 0 50px;
+.contacts {
+  background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
+  color: #fff;
+  text-align: center;
 
-  .links {
-    width: $content-width;
-    margin: auto;
-    text-align: right;
+  a {
+    color: #fff;
+  }
+
+  &__phone {
+    font-family: 'Roboto Bold', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 50px 0 20px;
+  }
+
+  &__email {
+    font-family: 'Roboto Medium', sans-serif;
+    font-size: 17px;
+    margin: 20px;
   }
 
 }
@@ -602,15 +611,6 @@ footer {
 @media all and (max-width: 1023px) {
   .header__content {
     min-width: auto;
-  }
-
-  .stickers {
-    padding: 0 10px;
-  }
-
-  footer .links {
-    padding: 0 10px;
-    width: auto;
   }
 }
 
