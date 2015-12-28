@@ -120,14 +120,14 @@ description: todo
           .custom-dropdown= select_tag :construction, options: %w(LED-доска)
         %p
           = label_tag :surface, caption: "Материал поверхности *"
-          .custom-dropdown= select_tag :surface, options: %w(выбрать)
+          .custom-dropdown= select_tag :surface, options: %w(алюминий пластик стекло)
       .form__column
         %p
           = label_tag :size, caption: "Размеры внутренние *"
-          .custom-dropdown= select_tag :size, options: %w(выбрать)
+          .custom-dropdown= select_tag :size, options: %w(90x60 120x80 240x160)
         %p
           = label_tag :background, caption: "Тип фона *"
-          .custom-dropdown= select_tag :background, options: %w(выбрать)
+          .custom-dropdown= select_tag :background, options: %w(белый жёлтый красный)
         %p
           = label_tag :username, caption: "Ваше имя"
           = text_field_tag :username, placeholder: "Имя"
@@ -145,26 +145,19 @@ description: todo
     - 6.times do
       .carousel__item
 
-.banner._feedback
+.banner.feedback
   %section
-    %h3
+    %h2
       %a{ name: 'feedback' } Отзывы
 
-    .comment
-      .comment__author Clint Eastwood:
-      “There's only one way to have a happy marriage and as soon as I learn what it is I'll get married again.”
+    %ul.content
+      - data.content.feedback.each_with_index do |item, i|
+        %li.comment
+          %blockquote.comment__body= item.body
+          = image_tag "assets/img/item#{i + 1}.jpg", class: "comment__thumb"
+          %span.comment__author= item.author
 
-    .comment
-      .comment__author Og Mandino:
-      “Treasure the love you have received above all. It will survive long after your gold and good health have vanished.”
-
-    .comment
-      .comment__author Pythagoras:
-      “Rest satisfied with doing well, and leave others to talk of you as they please.”
-
-    .stickers
-      .feedback__more-link= link_to 'показать больше'
-      .feedback__add-link= link_to 'оставить свой отзыв', '#give_feedback'
+    .feedback__add-link= link_to 'Оставить отзыв', '#give_feedback'
 
     .modal#give_feedback
       .details
