@@ -108,8 +108,8 @@ description: todo
     %h2
       %a{ name: "calculate" } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
-    = form_tag "//formspree.io/bezengi@gmail.com" do
-      = hidden_field_tag :_next, value: "//localhost:4567"
+    = form_tag "//formspree.io/bezengi@gmail.com", id: "calculate_form" do
+      = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
       .form__column
         %p
@@ -137,6 +137,12 @@ description: todo
         %p.note * Поля являются обязательными
 
       %p= submit_tag "Отправить"
+
+  .modal#thanks_for_order
+    .details
+      .close= link_to '×', '#'
+      %h3 Ваша заявка принята
+      %p Спасибо, что обратились в нашу компанию, менеджер свяжется с вами в самое ближайшее время.
 
 .gallery
   %h3

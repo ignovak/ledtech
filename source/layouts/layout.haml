@@ -24,5 +24,20 @@
             %li.nav__item= link_to 'Отзывы', '#feedback'
             %li.nav__item= link_to 'Контакты', '#contacts'
     %div{:role => "main", :class => "main"}= yield
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
     :javascript
-      document.querySelector('[name=_next]').value = location.href;
+      $('#calculate_form').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: this.action,
+          method: this.method,
+          data: $(this).serialize(),
+          dataType: 'json',
+          success: function(data) {
+            location.href = data.next;
+          },
+          error: function(error) {
+            console.error(error);
+          }
+        });
+      });
