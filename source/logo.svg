@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="393px" height="63px" viewBox="0 0 393 63">
+
+    <defs>
+        <linearGradient id="gradient-bg" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#8e0ab1"></stop>
+            <stop offset="100%" stop-color="#41047e"></stop>
+        </linearGradient>
+        <path id="semi-arc" d="M0 47 V50 C1 61 5 63 22 63 S41 62 42 55 V54 H40 C40 63 21 61 19 60 V47 Z"/>
+    </defs>
+
+    <g fill="url(#gradient-bg)">
+    <!-- <g> -->
+        <path d="M0 0 V63 H58 V59 H32 V0 Z"/>
+        <path d="M0 0 V63 H60 V59 H32 V33 H53 V29 H32 V4 H60 V0 Z" transform="translate(65,0)"/>
+        <path d="M0 0 V63 H45 V59 H32 V4 H45 V0 Z" transform="translate(134,0)"/>
+        <path d="M0 0 V63 C44 68 44 -4 0 0 Z" transform="translate(179,0)"/>
+        <path d="M0 22 V50 C1 61 5 63 17 63 S31 61 32 58 V55 H30 C29 61 25 61 19 61 V39 H27 V37 H19 V22 Z" transform="translate(219,0)"/>
+        <use xlink:href="#semi-arc" transform="translate(254,0)"/>
+        <path d="M0 47 H19 V31 C15 31 1 32 0 46 Z" transform="translate(254,0)"/>
+        <path d="M0 47 H23 C24 32 12 31 0 31 V34 C12 33 20 37 20 44 H0 Z" transform="translate(273,0)"/>
+        <use xlink:href="#semi-arc" transform="translate(300,0)"/>
+        <use xlink:href="#semi-arc" transform="translate(300,94) scale(1,-1)"/>
+        <path d="M0 22 V63 H19 V40 C19 32 28 32 28 40 V63 H47 V45 C47 39 43 30 19 31 V22 Z" transform="translate(346,0)"/>
+    </g>
+</svg>
