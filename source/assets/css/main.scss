@@ -16,21 +16,7 @@ creator@project.com @ Creator Company
 /* Variables
 --------------------------------------------- */
 
-$base-color: #000;
-$highlight-color: #ea2427;
-$select-color: #60a;
-$background-light-color: #6d0985;
-$background-dark-color: #3a037a;
-$border-dark-color: #674097;
-
-$content-width: 1180px;
-
-$body-font: Helvetica, Arial, sans-serif;
-
-$form-field-padding: 12px 6px;
-
-$break-small: 480px;
-
+@import "variables";
 
 /* Sprites
 --------------------------------------------- */
@@ -116,9 +102,11 @@ header {
   }
 
   .logo {
-    width: 200px;
-    height: 69px;
-    background: url(../img/logo.png) 15px 20px no-repeat;
+    margin: 20px 14px 18px;
+    img {
+      width: 172px;
+      height: 27px;
+    }
   }
 
   nav {
@@ -581,6 +569,13 @@ h1, h2, h3, h4 {
   background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   color: #fff;
   text-align: center;
+
+  .logo {
+    margin-top: 80px;
+    img {
+      width: 129px;
+    }
+  }
 
   a {
     color: #fff;

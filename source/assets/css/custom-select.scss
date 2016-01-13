@@ -1,5 +1,7 @@
 /* http://red-team-design.com/making-html-dropdowns-not-suck/ */
 
+@import "variables";
+
 .custom-dropdown > select {
   font-size: inherit; /* inherit size from .custom-dropdown */
   padding: $form-field-padding; /* add some space*/
