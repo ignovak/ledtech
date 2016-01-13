@@ -88,15 +88,23 @@ a {
   text-decoration: none;
 }
 
+body {
+  padding-top: 69px;
+}
+
 header {
-  max-width: $content-width;
-  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #fff;
   font-family: 'Roboto Regular', sans-serif;
   font-size: 16px;
 
   .header__content {
     min-width: 1024px;
-    max-width: 1280px;
+    max-width: $content-width;
     display: flex;
     margin: auto;
   }
