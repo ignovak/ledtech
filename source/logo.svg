@@ -5,21 +5,19 @@
             <stop offset="0%" stop-color="#8e0ab1"></stop>
             <stop offset="100%" stop-color="#41047e"></stop>
         </linearGradient>
-        <path id="semi-arc" d="M0 47 V50 C1 61 5 63 22 63 S41 62 42 55 V54 H40 C40 63 21 61 19 60 V47 Z"/>
     </defs>
 
     <g fill="url(#gradient-bg)">
-    <!-- <g> -->
         <path d="M0 0 V63 H58 V59 H32 V0 Z"/>
-        <path d="M0 0 V63 H60 V59 H32 V33 H53 V29 H32 V4 H60 V0 Z" transform="translate(65,0)"/>
-        <path d="M0 0 V63 H45 V59 H32 V4 H45 V0 Z" transform="translate(134,0)"/>
-        <path d="M0 0 V63 C44 68 44 -4 0 0 Z" transform="translate(179,0)"/>
-        <path d="M0 22 V50 C1 61 5 63 17 63 S31 61 32 58 V55 H30 C29 61 25 61 19 61 V39 H27 V37 H19 V22 Z" transform="translate(219,0)"/>
-        <use xlink:href="#semi-arc" transform="translate(254,0)"/>
-        <path d="M0 47 H19 V31 C15 31 1 32 0 46 Z" transform="translate(254,0)"/>
-        <path d="M0 47 H23 C24 32 12 31 0 31 V34 C12 33 20 37 20 44 H0 Z" transform="translate(273,0)"/>
-        <use xlink:href="#semi-arc" transform="translate(300,0)"/>
-        <use xlink:href="#semi-arc" transform="translate(300,94) scale(1,-1)"/>
-        <path d="M0 22 V63 H19 V40 C19 32 28 32 28 40 V63 H47 V45 C47 39 43 30 19 31 V22 Z" transform="translate(346,0)"/>
+        <path d="M65 0 V63 H125 V59 H97 V33 H118 V29 H97 V4 H125 V0 Z"/>
+        <path d="M134 0 V63 H179 V59 H166 V4 H179 V0 Z"/>
+        <path d="M179 0 V63 C223 68 223 -4 179 0 Z"/>
+        <path d="M219 22 V50 C220 61 224 63 236 63 S250 61 251 58 V55 H249 C248 61 244 61 238 61 V39 H246 V37 H238 V22 Z"/>
+        <path d="M254 47 V50 C255 61 259 63 276 63 S295 62 296 55 V54 H294 C294 63 275 61 273 60 V47 Z"/>
+        <path d="M254 47 H273 V31 C269 31 255 32 254 46 Z"/>
+        <path d="M273 47 H296 C297 32 285 31 273 31 V34 C285 33 293 37 293 44 H273 Z"/>
+        <path d="M300 47 V50 C301 61 305 63 322 63 S341 62 342 55 V54 H340 C340 63 321 61 319 60 V47 Z"/>
+        <path d="M300 47 V50 C301 61 305 63 322 63 S341 62 342 55 V54 H340 C340 63 321 61 319 60 V47 Z" transform="translate(0,94) scale(1,-1)"/>
+        <path d="M346 22 V63 H365 V40 C365 32 374 32 374 40 V63 H393 V45 C393 39 389 30 365 31 V22 Z"/>
     </g>
 </svg>
