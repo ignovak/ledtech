@@ -108,6 +108,7 @@ description: todo
     %h2
       %a{ name: "calculate" } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
+    -# = form_tag "//formspree.io/amdc.ua.gtalk@gmail.com", id: "calculate_form" do
     = form_tag "//formspree.io/bezengi@gmail.com", id: "calculate_form" do
       = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
