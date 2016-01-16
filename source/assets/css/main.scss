@@ -301,6 +301,17 @@ section {
   }
 }
 
+@media all and (max-width: 1024px) {
+  .catalog {
+    .content {
+      display: block;
+    }
+    .snippet {
+      margin: 80px auto 0;
+    }
+  }
+}
+
 .markers {
   overflow: hidden;
 
