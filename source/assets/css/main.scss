@@ -301,23 +301,13 @@ section {
   }
 }
 
-@media all and (max-width: 1024px) {
-  .catalog {
-    .content {
-      display: block;
-    }
-    .snippet {
-      margin: 80px auto 0;
-    }
-  }
-}
-
 .markers {
   overflow: hidden;
 
   img {
     float: right;
-    margin: 0 15px;
+    width: auto;
+    margin: -30px 15px 0;
   }
 
   .snippet {
@@ -487,6 +477,11 @@ h1, h2, h3, h4 {
 
 .banner {
   position: relative;
+  padding: 0 20px;
+
+  img {
+    max-width: 100%;
+  }
 
   &:after, &:before {
     content: '';
@@ -616,9 +611,9 @@ h1, h2, h3, h4 {
 }
 
 @media all and (min-width: 1300px) {
-    header:before {
-        background-size: 100%;
-    }
+  header:before {
+    background-size: 100%;
+  }
 }
 
 @media all and (max-width: 1200px) {
@@ -627,22 +622,47 @@ h1, h2, h3, h4 {
   }
 }
 
-@media all and (max-width: 1023px) {
-  .header__content {
-    min-width: auto;
+@media all and (max-width: 1024px) {
+  header {
+    .header__content {
+      min-width: 0;
+    }
+  }
+  .catalog, .feedback {
+    .content {
+      display: block;
+    }
+    .snippet, .comment {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .snippet {
+      margin-top: 80px;
+    }
+    .comment {
+      margin-top: 30px;
+    }
   }
 }
 
-@media all and (max-width: 767px) {
-  .header__content {
-    display: block;
+@media all and (max-width: 900px) {
+  header {
+    .nav__item {
+      padding: 24px 5px 20px;
+    }
   }
-
-  .nav {
-    display: block;
+  .markers img {
+    float: none;
   }
+}
 
-  .snippet {
-    width: auto;
+@media all and (max-width: 750px) {
+  header {
+    .header__content {
+      display: block;
+    }
+    .nav {
+      text-align: left;
+    }
   }
 }
