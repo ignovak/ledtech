@@ -234,6 +234,7 @@ header {
   &__thumb {
     img {
       width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -294,6 +295,7 @@ section {
 
   .snippet {
     width: 360px;
+    max-width: 100%;
 
     &__description {
       min-height: 100px;
@@ -306,7 +308,8 @@ section {
 
   img {
     float: right;
-    margin: 0 15px;
+    width: auto;
+    margin: -30px 15px 0;
   }
 
   .snippet {
@@ -328,28 +331,27 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 30px;
 
     .snippet {
       width: 250px;
       height: 230px;
+      margin-top: 20px;
       padding-top: 30px;
+      background: url(../img/features.png) 50% 0 no-repeat;
 
       &__description {
         font-family: 'Roboto Medium', sans-serif;
       }
 
-      &:nth-child(1) {
-        background: url(../img/feature1-bg.png) 50% 50% no-repeat;
-      }
       &:nth-child(2) {
-        background: url(../img/feature2-bg.png) 50% 50% no-repeat;
+        background-position: 50% -230px;
       }
       &:nth-child(3) {
-        background: url(../img/feature3-bg.png) 50% 50% no-repeat;
+        background-position: 50% -460px;
       }
       &:nth-child(4) {
-        background: url(../img/feature4-bg.png) 50% 50% no-repeat;
+        background-position: 50% -690px;
       }
     }
   }
@@ -477,6 +479,10 @@ h1, h2, h3, h4 {
 .banner {
   position: relative;
 
+  img {
+    max-width: 100%;
+  }
+
   &:after, &:before {
     content: '';
     position: absolute;
@@ -487,12 +493,14 @@ h1, h2, h3, h4 {
 
   &:before {
     top: 5px;
-    background-image: url(../img/edging-top.png);
+    /* url(../img/edging-top.png); */
+    background-image: url(data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAB3IAAAAICAYAAAAMX75ZAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwYAwANAxZUzwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAD00lEQVR42u2d7WccURSHf6ttWEq1tYRoCCGUEPYP6D/c/6OflrCEEEJZSgjRUEpMP/Rcjrv3bcbsJrt5nm+787Lzcuec586euTPpuk4AAAAvkK+Spplph5LuJD1V1nEj6YFDCQAAAIBX4pUAAAAAgFfCrvGWQwAAsDMcSjoqTP8laZX4/oOk08Jy55IOMtPeSDoxwUhxYMvHzBv2Z2rys03uJd26z38lLRuXfZR0XZlnaevcND9NDAEAAADwSrwSrwQAAAC8Eq/EK/eUCU/kwgA+WaAsBcY7u3BLvJd05j7PJB27z0eWCFqCW414G1Pblwo01xYMPZdar6o5s/3RwOST4o+kq4HnqE+wr53fmPi81AL0vlUY+f33bTZuzymJuTDRAHgOFj3nb4njrXIeWNk8ufgK5RyYyiOh4+Nzk4/LD4WODQBeiVfilXglAF6JV+KVgFfilXglXolXAl75gr1y0nXdfKR1DTmA+0ytoqSFK0uOLZQe6T+xZNe67Kltf+DYEgDAJmitCErFmFuTZH+9la6FPsTXAZQ7EimR90kw5sk6GWNRq/4rTc+1mVz1Xq4T0zo/rBM6nKl21KdzlcubqfM/79kp9B2cR5VvYn2W9FvSj8q6fKd6G+3HH9+WG3EhxtbYhOTilXglAF6JV+KVgFfilXglXolXAl6JV+KVeOWr98pJt71Hcn1VkN/JVLDL/Qu/0P/qkIvG32ypJhkqMPFyY4jQLhE/sp8KLD7hleTq0hryskdQLSXX+YCOgK9aioNbKUHG+z1WNddra0/7dC2kpGHMjuTQZbc1hAaMTy3v1W4UtQ4JsyrIYxCWY0nforj3YDErrlKGzRHHgddYPYtX4pV4JV6JV+KVgFcCXolX4pV4JV4JeCXglXvvldv8IxfWg2g8tEGJ8Pj3WAnTV0PmKiPPLZiGbb63wDqT9L0gAFOlKwzCxT2z4N5HfGCcADqU0rApLcO0tATzuAKlVrHkBTaISBDT0LbidRzZ9MdMp60mEMgFQJ1cbourz4KwhevUdzR9rnvuysFUNWaqg3LnbgB8kfRR0rue643jjI9PrUPNxMcr9oaawOZuZHBDFa/EK/FKvBKvBMAr8Uq8Eq/EKwGvxCsB8Mote2XL0Mq1YS5a8MEpBNFNBfDUwc8FUy8pcZVKqioqlQBSQ8jE1S1D3iMS3k+QkvqpnZNVRpDDdsbvZUi9KwEAAGCXaK3Ya4H3qY1Dn9d04JV4JQAAAF4JeCVeiVcCAABe2eiVkxfyQG7qJfHhu1ql4II2AgAAAAB4JQAAAADglQAAALBP/AMxfl7fr2Ix6QAAAABJRU5ErkJggg==);
   }
 
   &:after {
     bottom: 5px;
-    background-image: url(../img/edging-bottom.png);
+    /* url(../img/edging-bottom.png); */
+    background-image: url(data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAB3IAAAAICAYAAAAMX75ZAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwYAwAn2K2dGQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAD00lEQVR42u2d7WccURSHf6ttWEq1tYRoCCGUEPYP6D/c/6OflrCEEEJZSgjRUEpMP/Rcjrv3bcbsJrt5nm+787Lzcuec586euTPpuk4AAAAvkK+Spplph5LuJD1V1nEj6YFDCQAAAIBX4pUAAAAAgFfCrvGWQwAAsDMcSjoqTP8laZX4/oOk08Jy55IOMtPeSDoxwUhxYMvHzBv2Z2rys03uJd26z38lLRuXfZR0XZlnaevcND9NDAEAAADwSrwSrwQAAAC8Eq/EK/eUCU/kwgA+WaAsBcY7u3BLvJd05j7PJB27z0eWCFqCW414G1Pblwo01xYMPZdar6o5s/3RwOST4o+kq4HnqE+wr53fmPi81AL0vlUY+f33bTZuzymJuTDRAHgOFj3nb4njrXIeWNk8ufgK5RyYyiOh4+Nzk4/LD4WODQBeiVfilXglAF6JV+KVgFfilXglXolXAl75gr1y0nXdfKR1DTmA+0ytoqSFK0uOLZQe6T+xZNe67Kltf+DYEgDAJmitCErFmFuTZH+9la6FPsTXAZQ7EimR90kw5sk6GWNRq/4rTc+1mVz1Xq4T0zo/rBM6nKl21KdzlcubqfM/79kp9B2cR5VvYn2W9FvSj8q6fKd6G+3HH9+WG3EhxtbYhOTilXglAF6JV+KVgFfilXglXolXAl6JV+KVeOWr98pJt71Hcn1VkN/JVLDL/Qu/0P/qkIvG32ypJhkqMPFyY4jQLhE/sp8KLD7hleTq0hryskdQLSXX+YCOgK9aioNbKUHG+z1WNddra0/7dC2kpGHMjuTQZbc1hAaMTy3v1W4UtQ4JsyrIYxCWY0nforj3YDErrlKGzRHHgddYPYtX4pV4JV6JV+KVgFcCXolX4pV4JV4JeCXglXvvldv8IxfWg2g8tEGJ8Pj3WAnTV0PmKiPPLZiGbb63wDqT9L0gAFOlKwzCxT2z4N5HfGCcADqU0rApLcO0tATzuAKlVrHkBTaISBDT0LbidRzZ9MdMp60mEMgFQJ1cbourz4KwhevUdzR9rnvuysFUNWaqg3LnbgB8kfRR0rue643jjI9PrUPNxMcr9oaawOZuZHBDFa/EK/FKvBKvBMAr8Uq8Eq/EKwGvxCsB8Mote2XL0Mq1YS5a8MEpBNFNBfDUwc8FUy8pcZVKqioqlQBSQ8jE1S1D3iMS3k+QkvqpnZNVRpDDdsbvZUi9KwEAAGCXaK3Ya4H3qY1Dn9d04JV4JQAAAF4JeCVeiVcCAABe2eiVkxfyQG7qJfHhu1ql4II2AgAAAAB4JQAAAADglQAAALBP/AMxfl7fr2Ix6QAAAABJRU5ErkJggg==);
   }
 
   &.features:after,
@@ -512,6 +520,7 @@ h1, h2, h3, h4 {
   background-position: 50% 0;
   background-repeat: no-repeat;
   height: 755px;
+  padding: 0 20px;
   color: #fff;
 
   &__title {
@@ -531,7 +540,7 @@ h1, h2, h3, h4 {
     color: #000;
   }
 
-  h4 {
+  &__phone {
     padding: 55px;
     font-family: 'Signpainter', sans-serif;
     font-weight: bold;
@@ -542,7 +551,8 @@ h1, h2, h3, h4 {
       display: inline-block;
       width: 45px;
       height: 40px;
-      background: url(../img/phone-icon.png) 0 0 no-repeat;
+      /* url(../img/phone-icon.png); */
+      background: url(data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAoCAYAAADg+OpoAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwXFSYdnbcIGwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACsElEQVRYw73XPYtcVRgH8N+czG7iZp2FRExQ1GJT+Fr6AQQbBT+AYGkbLEQrBdEUoo1gayUWKbQREQXBxkIQO1EsVKImRHRf3TWb2Z15LHxGjtfdzF32zv7hYc45c879n+fe57UXESo8g+dwVnucwDlcy/kGvsQL2Jps6iXRIq5jAb/hxiGIvsA27sP9uXYnTif53TXRDlYmiw0s4z2s4co+/3+Ndw64xA1cxQUR8WFEDCPCAXIl/sFu/o4jYidlmGvLB5xdzP1ExHpEfHYLouWI+CoiViqCWtZvcVZe5mIfffxRqXsRD+b4Ki7hUYfDS3kO/sQTfdRm9z0uYLdaeyUtqw0CQ5zM+aX8tsulsfEevI1TlfTRayklz2zh4Xzm7xg0iXp5oy5xDQtNoj2c7+Dhffyc412UJtEQ8x0Q9Rrz/xGNO9KoxgDjYvYYYNQk+qsyzaPibEW0vZ9Gpzsg2aues4T1JtHOIZxzmuNOcAprJc1vkIs3M2UcFWPckeOT2CwYZR6C1bzBUTFMX5r41Gbz1W1WG7pCyNjUtLr5Wdj4cfjREOePg2g8a41WKp9SctBvqHpUzFfJc4gzJUulQR0AZ/HtS1raUs4XZvAKR8dldVs4UWakRROLBXNVjdyfFVNJCxlVxtC5NtgoqcVqIwx1iduwWjoy52lpYqVksjvTMdFc1S/NTVL5RpXsPsG9Gdrbyjgvu5NRJjKnvVEZ2PWCb6tC4sUpJe/L+AE/4c1GGVyXzwXfVAb3S8H7LQuSy3i1cvLn8UHLxLc06fhin+qyiR+zg3uoaikfaNHvjvDUpFm6GREfT2mono2IUfwXb005825E7EXEvz3sk/goP+ZaRvRzGTG282aftrS4R3BXtkAFj+PzXqP9fw1P41d8l1Hjsfzv9pQ2bcoYr9dN9N99VaEB65KMKAAAAABJRU5ErkJggg==) 0 0 no-repeat;
       transform: translateY(5px);
     }
   }
@@ -605,9 +615,9 @@ h1, h2, h3, h4 {
 }
 
 @media all and (min-width: 1300px) {
-    header:before {
-        background-size: 100%;
-    }
+  header:before {
+    background-size: 100%;
+  }
 }
 
 @media all and (max-width: 1200px) {
@@ -616,22 +626,77 @@ h1, h2, h3, h4 {
   }
 }
 
-@media all and (max-width: 1023px) {
-  .header__content {
-    min-width: auto;
+@media all and (max-width: 1024px) {
+  header {
+    .header__content {
+      min-width: 0;
+    }
+  }
+  .catalog, .feedback {
+    .content {
+      display: block;
+    }
+    .snippet, .comment {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .snippet {
+      margin-top: 80px;
+    }
+    .comment {
+      margin-top: 30px;
+    }
   }
 }
 
-@media all and (max-width: 767px) {
-  .header__content {
-    display: block;
+@media all and (max-width: 900px) {
+  header {
+    .nav__item {
+      padding: 24px 5px 20px;
+    }
   }
-
-  .nav {
-    display: block;
+  .markers img {
+    float: none;
+    margin: 0;
   }
+  .features {
+    padding: 0 20px;
+    background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
+  }
+}
 
-  .snippet {
-    width: auto;
+@media all and (max-width: 750px) {
+  body {
+    padding: 0;
+  }
+  header {
+    position: static;
+    .header__content {
+      display: block;
+    }
+    .nav {
+      text-align: left;
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  header {
+    .nav__item {
+      display: block;
+      padding: 5px;
+    }
+  }
+  .promo {
+    height: 655px;
+    &__phone {
+      padding: 15px 5px;
+      font-size: 36px;
+    }
+  }
+  section {
+    h2 {
+      font-size: 24px;
+    }
   }
 }
