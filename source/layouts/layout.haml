@@ -36,10 +36,17 @@
       });
       $('#calculate_form').submit(function(e) {
         e.preventDefault();
+        var data = $(this).serialize();
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'form',
+          eventAction: 'submit',
+          eventValue: data
+        });
         $.ajax({
           url: this.action,
           method: this.method,
-          data: $(this).serialize(),
+          data: data,
           dataType: 'json',
           success: function(data) {
             location.href = data.next;
@@ -47,6 +54,24 @@
           error: function(error) {
             console.error(error);
           }
+        });
+      });
+
+      // Track basic JavaScript errors
+      window.addEventListener('error', function(e) {
+        ga('send', 'exception', {
+          type: 'JavaScript Error',
+          message: e.message,
+          line: e.filename + ':  ' + e.lineno
+        });
+      });
+
+      // Track AJAX errors (jQuery API)
+      $(document).ajaxError(function(e, request, settings) {
+        ga('send', 'exception', {
+          type: 'Ajax Error',
+          url: settings.url,
+          data: e.result
         });
       });
 
