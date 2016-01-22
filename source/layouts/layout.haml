@@ -27,6 +27,13 @@
     %div{:role => "main", :class => "main"}= yield
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
     :javascript
+      $('#product').change(function() {
+        $('#construction').html(
+          this.value === 'LED-штендер' ?
+            '<option value="Односторонний">Односторонний</option><option value="Двусторонний">Двусторонний</option>' :
+            '<option value="С прозрачным фоном">С прозрачным фоном</option><option value="Прозрачная (фон отсутствует)">Прозрачная (фон отсутствует)</option>'
+        );
+      });
       $('#calculate_form').submit(function(e) {
         e.preventDefault();
         $.ajax({

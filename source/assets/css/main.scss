@@ -382,17 +382,22 @@ section {
     label {
       display: block;
       margin: 10px 0;
+
+      &[for=width] {
+        & ~ input {
+          float: right;
+          width: 49%;
+        }
+        & + input {
+          float: left;
+        }
+      }
     }
 
     input {
       width: 100%;
       padding: $form-field-padding;
       font-size: inherit;
-    }
-
-    .note {
-      margin-top: 20px;
-      text-align: right;
     }
 
   }

@@ -109,34 +109,22 @@ keywords: LED доска, лед доска, рекламная доска, св
     %h2
       %a{ name: "calculate" } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
-    -# = form_tag "//formspree.io/amdc.ua.gtalk@gmail.com", id: "calculate_form" do
-    = form_tag "//formspree.io/bezengi@gmail.com", id: "calculate_form" do
+    = form_tag "//formspree.io/amdc.ua.gtalk@gmail.com", id: "calculate_form" do
       = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
       .form__column
-        %p
-          = label_tag :product, caption: "Вид товара"
-          .custom-dropdown= select_tag :product, options: %w(LED-штендер)
-        %p
-          = label_tag :construction, caption: "Тип конструкции *"
-          .custom-dropdown= select_tag :construction, options: %w(LED-доска)
-        %p
-          = label_tag :surface, caption: "Материал поверхности *"
-          .custom-dropdown= select_tag :surface, options: %w(алюминий пластик стекло)
+        = label_tag :product, caption: "Тип товара"
+        .custom-dropdown= select_tag :product, id: "product", options: %w(LED-штендер LED-доска)
+        = label_tag :construction, caption: "Тип конструкции"
+        .custom-dropdown= select_tag :construction, id: "construction", options: %w(Односторонний Двусторонний)
+        = label_tag :width, caption: "Размеры поверхности, см"
+        = text_field_tag :width, id: "width", placeholder: "Ширина"
+        = text_field_tag :height, id: "height", placeholder: "Высота"
       .form__column
-        %p
-          = label_tag :size, caption: "Размеры внутренние *"
-          .custom-dropdown= select_tag :size, options: %w(90x60 120x80 240x160)
-        %p
-          = label_tag :background, caption: "Тип фона *"
-          .custom-dropdown= select_tag :background, options: %w(белый жёлтый красный)
-        %p
-          = label_tag :username, caption: "Ваше имя"
-          = text_field_tag :username, placeholder: "Имя"
-        %p
-          = label_tag :email, caption: "Ваш е-mail"
-          = email_field_tag :email, placeholder: "E-mail"
-        %p.note * Поля являются обязательными
+        = label_tag :username, caption: "Ваше имя"
+        = text_field_tag :username, id: "username", placeholder: "Имя"
+        = label_tag :email, caption: "Мобильный телефон или е-mail"
+        = text_field_tag :email, id: "email", placeholder: "Мобильный телефон или e-mail"
 
       %p= submit_tag "Отправить"
 
