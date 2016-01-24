@@ -145,7 +145,6 @@ keywords: LED доска, лед доска, рекламная доска, св
       - data.content.feedback.each_with_index do |item, i|
         %li.comment
           %blockquote.comment__body= item.body
-          = image_tag "assets/img/item#{i + 1}.jpg", class: "comment__thumb"
           %span.comment__author= item.author
 
     .feedback__add-link= link_to 'Оставить отзыв', '#give_feedback'
