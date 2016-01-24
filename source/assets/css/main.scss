@@ -130,12 +130,11 @@ header {
 
       text-align: center;
 
-      &.selected {
-        color: $select-color;
-      }
-
       a {
         color: #000;
+        &.selected {
+          color: $select-color;
+        }
       }
     }
   }
@@ -279,6 +278,10 @@ section {
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
+
+    a {
+      padding-top: 145px;
+    }
   }
 
 }

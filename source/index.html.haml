@@ -19,7 +19,8 @@ keywords: LED доска, лед доска, рекламная доска, св
     а встроенная LED-подсветка создает яркий и привлекательный эффект вашим сообщениям.
 .banner.catalog
   %section
-    %h2 Ассортимент и цены
+    %h2
+      %a{ name: "prices" } Ассортимент и цены
     %ul.content
       - data.content.catalog.each_with_index do |item, i|
         %li.snippet
