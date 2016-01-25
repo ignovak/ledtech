@@ -118,8 +118,12 @@ keywords: LED доска, лед доска, рекламная доска, св
       .form__column
         = label_tag :customer_name, caption: "Ваше имя"
         = text_field_tag :customer_name, id: "customer_name", placeholder: "Имя"
-        = label_tag :email, caption: "Мобильный телефон или е-mail"
-        = text_field_tag :email, id: "email", placeholder: "Мобильный телефон или e-mail"
+        = label_tag :email, caption: "Мобильный телефон или е-mail *"
+        = text_field_tag :email,
+          id: "email",
+          pattern: "\\d+|\\w+@\\w+\\.\\w+",
+          placeholder: "Мобильный телефон или e-mail",
+          required: true
       %p= submit_tag "Отправить"
 
   .modal#thanks_for_order
