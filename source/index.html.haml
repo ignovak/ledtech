@@ -163,6 +163,11 @@ keywords: LED доска, лед доска, рекламная доска, св
             ~ text_area_tag :feedback_text, id: "feedback_text", placeholder: "Введите текст…"
           %p= submit_tag "Отправить отзыв"
 
+    .modal#thanks_for_feedback
+      .details
+        %h3 Спасибо за отзыв
+        .btn-primary= link_to "Закрыть", "#"
+
 .banner.contacts
   %section
     %h2

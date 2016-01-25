@@ -60,6 +60,28 @@
           }
         });
       });
+      $('#feedback_form').submit(function(e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'feedback',
+          eventAction: 'submit',
+          eventValue: data
+        });
+        $.ajax({
+          url: this.action,
+          method: this.method,
+          data: data,
+          dataType: 'json',
+          success: function(data) {
+            location.href = data.next;
+          },
+          error: function(error) {
+            console.error(error);
+          }
+        });
+      });
 
       // Track basic JavaScript errors
       window.addEventListener('error', function(e) {
