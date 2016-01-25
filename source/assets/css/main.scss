@@ -71,21 +71,25 @@ GLOBAL LAYOUT
   src: url(../fonts/SignPainter_HouseCasual.ttf);
 }
 
-.wrapper {
-  width: 960px;
-  margin: 0 auto;
-}
-
-._left {
-  float: left;
-}
-
-._right {
-  float: right;
-}
-
 a {
   text-decoration: none;
+}
+
+input[type=submit] {
+  padding: 10px 50px;
+  border: none;
+  font-family: 'Roboto Medium', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: $background-light-color;
+  background-color: $background-dark-color;
+}
+
+input, textarea {
+  padding: $form-field-padding;
+  font-size: inherit;
 }
 
 body {
@@ -140,8 +144,9 @@ header {
   }
 }
 
-.order-link {
+.btn-primary {
   margin: 36px 0 24px;
+  text-align: center;
 
   a {
     padding: 12px 60px;
@@ -190,13 +195,13 @@ header {
     left: 0;
 
     width: 40%;
-    height: 200px;
+    height: 250px;
     margin: auto;
     padding: 10px 15px;
     overflow: scroll;
 
     background-color: #fff;
-    text-align: justify;
+    text-align: center;
 
     .close {
       float: right;
@@ -209,21 +214,20 @@ header {
 
     h3 {
       font-family: 'Roboto Bold', sans-serif;
+      font-size: 22px;
       font-weight: bold;
+
+      margin: 25px;
       padding: 15px 0 0;
       color: $background-light-color;
+      text-transform: uppercase;
     }
 
     p {
       margin: 10px 60px;
       color: #000;
-      text-align: center;
     }
 
-  }
-
-  &#give_feedback .details {
-    background: #eee;
   }
 }
 
@@ -399,21 +403,8 @@ section {
 
     input {
       width: 100%;
-      padding: $form-field-padding;
-      font-size: inherit;
     }
 
-  }
-
-  input[type=submit] {
-    padding: 10px 50px;
-    border: none;
-    font-family: 'Roboto Medium', sans-serif;
-    font-size: 16px;
-    color: #fff;
-    cursor: pointer;
-    text-transform: uppercase;
-    background-color: $background-light-color;
   }
 }
 
@@ -471,6 +462,24 @@ section {
     }
   }
 
+  .details {
+    height: 300px;
+    .input-row {
+      text-align: left;
+      display: inline-block;
+    }
+    label {
+      display: inline-block;
+      width: 130px;
+    }
+    input, textarea {
+      display: inline-block;
+      width: 270px;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
 }
 
 h1, h2, h3, h4 {
