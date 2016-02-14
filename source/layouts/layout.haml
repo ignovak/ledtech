@@ -33,6 +33,11 @@
         $('.nav .selected').removeClass('selected');
         $(this).addClass('selected');
       });
+      $(window).on('keydown', function(e) {
+        if (e.which === 27 && $('.modal:visible').length) {
+          history.back();
+        }
+      });
       $('#product').change(function() {
         $('#construction').html(
           this.value === 'LED-штендер' ?
