@@ -22,36 +22,45 @@ keywords: LED доска, лед доска, рекламная доска, св
     %h2
       %a{ name: "prices" } Ассортимент и цены
     %ul.content
-      - data.content.catalog.each_with_index do |item, i|
+      - data.content.catalog.products.each_with_index do |item, i|
         %li.snippet
           .snippet__thumb= image_tag "assets/img/item#{i + 1}.jpg"
           %h3.snippet__title= item.title
           %p.snippet__description= item.description
-          -# .modal{ id: "details#{i}" }
-            .details
-              .close= link_to '×', '#'
-              %h3 LED штендер
-              %p
-                LЕD штендер – это переносной рекламный стенд с использованием технологии LED.
-                Изделие представляет собой Т-образную конструкцию с возможностью отображения рекламнo-информационных надписей с двух сторон.
-                Устанавливается на улице или внутри помещений в непосредственной близости к месту продвижения Ваших товаров и услуг.
-              %p
-                Как это работает?
-                LED штендер – это панель с торцевой LED подсветкой, на которой вместо мела пишут флуоресцентными (светящимися) маркерами.
-                Вы просто рисуете и пишете на штендере все что угодно, ваши надписи и рисунки будут динамически подсвечиваться разными цветами, создавая привлекательный эффект, который невозможно получить, используя меловую доску.
-              %p
-                Предлагается LED штендер размерами 50×70 см. При необходимости возможно изготовление LED штендера любых размеров и характеристик с учетом Ваших пожеланий, например, материал поверхности, тип контроллера, длина провода, двухсторонний или односторонний и т.д.
-
           .price
             от
-            %span.amount 100
+            %span.amount= item.price
             грн
-          .btn-primary= link_to "Заказать", "#"
+          .btn-primary= link_to "Заказать", "##{item.url}"
+          .modal{ id: item.url }
+            .details
+              .close= link_to '×', '#prices'
+              .details__form
+                %h3= item.form_title || item.title
+                = form_tag data.content.form_action do
+                  = hidden_field_tag :_next, value: "#thanks_for_order"
+                  = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
+                  = hidden_field_tag :product, value: item.title
+                  = label_tag "size_#{i}", caption: "Размер пишущей поверхности"
+                  .custom-dropdown= select_tag :size, id: "size_#{i}", options: item.sizes
+                  = partial :credentials_fields, locals: { name_id: "customer_name_#{i}", email_id: "customer_email_#{i}" }
+                  = submit_tag "Отправить заявку"
+              .details__contents
+                .details__snippet-thumb= image_tag "assets/img/item#{i + 1}.jpg"
+                %h4 Комплектация:
+                %ol
+                  - data.content.catalog.contents.each do |entry|
+                    %li= entry.sub "_title_", item.title
+                %h4 Поставляется отдельно:
+                %ul
+                  - data.content.catalog.additional_contents.each do |entry|
+                    %li= entry
 
+- item = data.content.catalog.markers
 %section.markers
   .snippet
     .snippet__thumb= image_tag "assets/img/markers.jpg"
-    %h3.snippet__title Флуоресцентные маркеры
+    %h3.snippet__title= item.title
     %p.snippet__description
       Флуоресцентные маркеры применяются для выполнения надписей и рисунков на нашей продукции.
       Маркеры изготовлены на водной основе, без запаха, легко стираются бумажной салфеткой.
@@ -60,9 +69,25 @@ keywords: LED доска, лед доска, рекламная доска, св
       Перед использованием маркер необходимо встряхнуть, нажать на стержень и держать, пока он не пропитается краской.
     .price
       от
-      %span.amount 100
+      %span.amount= item.price
       грн
-    .btn-primary= link_to "Заказать", "#"
+    .btn-primary= link_to "Заказать", "##{item.url}"
+    .modal{ id: item.url }
+      .details
+        .close= link_to '×', '#prices'
+        .details__form
+          %h3= item.title
+          = form_tag data.content.form_action do
+            = hidden_field_tag :_next, value: "#thanks_for_order"
+            = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
+            = hidden_field_tag :product, value: item.title
+            = partial :credentials_fields, locals: { name_id: "customer_name_markers", email_id: "customer_email_markers" }
+            = submit_tag "Отправить заявку"
+        .details__contents
+          .details__snippet-thumb= image_tag "assets/img/markers.jpg"
+          %h4 Набор разноцветных маркеров (8 штук):
+          %p синий, розовый, белый, жёлтый, фиолетовый, красный, зелёный, оранжевый
+          %p Толщина линии – 8 мм
 
 .banner.features
   %section
@@ -104,7 +129,7 @@ keywords: LED доска, лед доска, рекламная доска, св
     %h2
       %a{ name: "calculate" } Рассчёт стоимости LED-изделия
     %h3 по индивидуальным размерам
-    = form_tag "//formspree.io/#{data.content.email}", id: "calculate_form" do
+    = form_tag data.content.form_action do
       = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
       .form__column
@@ -116,14 +141,7 @@ keywords: LED доска, лед доска, рекламная доска, св
         = text_field_tag :width, id: "width", placeholder: "Ширина"
         = text_field_tag :height, id: "height", placeholder: "Высота"
       .form__column
-        = label_tag :customer_name, caption: "Ваше имя"
-        = text_field_tag :customer_name, id: "customer_name", placeholder: "Имя"
-        = label_tag :email, caption: "Мобильный телефон или е-mail *"
-        = text_field_tag :email,
-          id: "email",
-          pattern: "\\d+|\\w+@\\w+\\.\\w+",
-          placeholder: "Мобильный телефон или e-mail",
-          required: true
+        = partial :credentials_fields, locals: { name_id: "customer_name_spec", email_id: "customer_email_spec" }
       %p= submit_tag "Отправить"
 
   .modal#thanks_for_order
@@ -156,7 +174,7 @@ keywords: LED доска, лед доска, рекламная доска, св
       .details
         .close= link_to "×", "#"
         %h3 Оставить отзыв
-        = form_tag "//formspree.io/#{data.content.email}", id: "feedback_form" do
+        = form_tag data.content.form_action do
           = hidden_field_tag :_next, value: "#thanks_for_feedback"
           = hidden_field_tag :_subject, value: "Новый отзыв на ledtech"
           .input-row
@@ -179,9 +197,9 @@ keywords: LED доска, лед доска, рекламная доска, св
     .logo= image_tag "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22393%22%20height%3D%2263%22%20viewBox%3D%220%200%20393%2063%22%20fill%3D%22%23fff%22%3E%3Cpath%20d%3D%22M0%200v63h58v-4H32V0zM65%200v63h60v-4H97V33h21v-4H97V4h28V0zM134%200v63h45v-4h-13V4h13V0zM179%200v63c44%205%2044-67%200-63z%22%2F%3E%3Cpath%20d%3D%22M219%2022v28c1%2011%205%2013%2017%2013s14-2%2015-5v-3h-2c-1%206-5%206-11%206V39h8v-2h-8V22zM254%2047v3c1%2011%205%2013%2022%2013s19-1%2020-8v-1h-2c0%209-19%207-21%206V47zM254%2047h19V31c-4%200-18%201-19%2015zM273%2047h23c1-15-11-16-23-16v3c12-1%2020%203%2020%2010h-20zM300%2047v3c1%2011%205%2013%2022%2013s19-1%2020-8v-1h-2c0%209-19%207-21%206V47zM300%2047v-3c1-11%205-13%2022-13s19%201%2020%208v1h-2c0-9-19-7-21-6v13zM346%2022v41h19V40c0-8%209-8%209%200v23h19V45c0-6-4-15-28-14v-9z%22%2F%3E%3C%2Fsvg%3E"
     .contacts__phone
       = succeed ',' do
-        = link_to data.content.phone1, 'tel:+38-095-180-2253'
-      = link_to data.content.phone2, 'tel:+38-050-805-4111'
-    .contacts__email= link_to 'good.shop.ua@gmail.com', 'mailto:good.shop.ua@gmail.com'
+        = link_to data.content.phone1, "tel:+38-095-180-2253"
+      = link_to data.content.phone2, "tel:+38-050-805-4111"
+    .contacts__email= link_to data.content.email, "mailto:#{data.content.email}"
 
     #fb-root
     = javascript_include_tag "//vk.com/js/api/openapi.js?121"
