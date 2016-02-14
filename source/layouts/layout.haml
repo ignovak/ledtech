@@ -29,12 +29,17 @@
     %div{:role => "main", :class => "main"}= yield
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"
     :javascript
-      $('.nav').on('click', 'a', function() {
-        $('.nav .selected').removeClass('selected');
+      $('header').on('click', 'a', function() {
+        $('header .selected').removeClass('selected');
         $(this).addClass('selected');
       });
       $(window).on('keydown', function(e) {
         if (e.which === 27 && $('.modal:visible').length) {
+          history.back();
+        }
+      });
+      $('.modal').on('click', function(e) {
+        if (e.target === e.currentTarget) {
           history.back();
         }
       });
@@ -45,34 +50,12 @@
             '<option value="С прозрачным фоном">С прозрачным фоном</option><option value="Прозрачная (фон отсутствует)">Прозрачная (фон отсутствует)</option>'
         );
       });
-      $('#calculate_form').submit(function(e) {
+      $('form').submit(function(e) {
         e.preventDefault();
         var data = $(this).serialize();
         ga('send', {
           hitType: 'event',
           eventCategory: 'form',
-          eventAction: 'submit',
-          eventValue: data
-        });
-        $.ajax({
-          url: this.action,
-          method: this.method,
-          data: data,
-          dataType: 'json',
-          success: function(data) {
-            location.href = data.next;
-          },
-          error: function(error) {
-            console.error(error);
-          }
-        });
-      });
-      $('#feedback_form').submit(function(e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'feedback',
           eventAction: 'submit',
           eventValue: data
         });
