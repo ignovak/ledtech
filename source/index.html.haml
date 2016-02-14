@@ -24,7 +24,7 @@ keywords: LED доска, лед доска, рекламная доска, св
     %ul.content
       - data.content.catalog.products.each_with_index do |item, i|
         %li.snippet
-          .snippet__thumb= image_tag "assets/img/item#{i + 1}.jpg"
+          .snippet__thumb= link_to image_tag("assets/img/item#{i + 1}.jpg"), "##{item.url}"
           %h3.snippet__title= item.title
           %p.snippet__description= item.description
           .price
@@ -59,7 +59,7 @@ keywords: LED доска, лед доска, рекламная доска, св
 - item = data.content.catalog.markers
 %section.markers
   .snippet
-    .snippet__thumb= image_tag "assets/img/markers.jpg"
+    .snippet__thumb= link_to image_tag("assets/img/markers.jpg"), "##{item.url}"
     %h3.snippet__title= item.title
     %p.snippet__description
       Флуоресцентные маркеры применяются для выполнения надписей и рисунков на нашей продукции.

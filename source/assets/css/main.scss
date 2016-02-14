@@ -64,7 +64,6 @@ input[type=submit] {
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: $background-light-color;
   background-color: $background-dark-color;
 }
 
@@ -139,6 +138,9 @@ header {
     font-weight: 500;
     color: #fff;
     text-transform: uppercase;
+    &:hover {
+      background: $background-light-color;
+    }
   }
 }
 
@@ -180,27 +182,24 @@ header {
     width: 40%;
     height: 250px;
     margin: auto;
-    padding: 10px 15px;
     overflow: scroll;
 
     background-color: #fff;
     text-align: center;
 
     .close {
-      float: right;
+      position: absolute;
+      top: 10px;
+      right: 15px;
 
       a {
-        font-size: 36px;
-        font-family: Roboto, sans-serif;
+        font: $h2-font;
         font-weight: 300;
       }
     }
 
     h3 {
-      font-family: Roboto, sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-
+      font: $h3-font;
       margin: 25px;
       padding: 15px 0 0;
       color: $background-light-color;
@@ -218,18 +217,14 @@ header {
 .snippet {
   text-align: center;
 
-  &__thumb {
-    img {
-      width: 100%;
-      max-width: 100%;
-    }
+  img {
+    width: 100%;
+    max-width: 100%;
   }
 
   &__title {
     margin: 30px 0 25px;
-    font-family: Roboto, sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    font: $h3-font;
     text-transform: uppercase;
   }
 
@@ -243,7 +238,7 @@ header {
 .annotation {
   text-align: center;
   &__subtitle {
-    margin-top: 25px;
+    margin-top: 18px;
     font-family: Roboto, sans-serif;
     font-size: 17px;
     font-weight: 400;
@@ -262,12 +257,10 @@ header {
 section {
   max-width: $content-width;
   margin: auto;
-  padding: 90px 0;
+  padding: 80px 0;
 
   h2 {
-    font-family: Roboto, sans-serif;
-    font-size: 36px;
-    font-weight: 700;
+    font: $h2-font;
     text-transform: uppercase;
 
     a {
@@ -284,7 +277,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   .snippet {
@@ -292,15 +285,16 @@ section {
     max-width: 100%;
 
     &__description {
-      min-height: 100px;
+      min-height: 110px;
     }
   }
+
 }
 
 .markers {
   overflow: hidden;
 
-  img {
+  .snippet__thumb img {
     float: right;
     width: auto;
     margin: -30px 15px 0;
@@ -314,6 +308,70 @@ section {
 
   .price {
     margin-top: 40px;
+  }
+}
+
+.catalog, .markers {
+  .details {
+    display: table;
+    width: 760px;
+    font-size: 14px;
+    h3 {
+      color: #fff;
+    }
+    .close {
+      top: 0;
+      right: 10px;
+    }
+    &__form, &__contents {
+      display: table-cell;
+      padding: 30px;
+      text-align: left;
+      vertical-align: middle;
+      h3 {
+        margin: 20px 0;
+        text-align: left;
+      }
+    }
+    &__form {
+      width: 360px;
+      background: $background-base-color;
+      color: #fff;
+      input, .custom-dropdown {
+        margin: 6px 0 15px;
+      }
+      input {
+        display: block;
+        width: 100%;
+        &[type=submit] {
+          margin-top: 30px;
+        }
+      }
+    }
+    &__contents {
+      width: 402px; /* fix zoom distorting */
+      h4 {
+        margin-top: 10px;
+        color: $background-light-color;
+        font-weight: bold;
+        text-align: left;
+      }
+      ol, ul {
+        margin-left: 20px;
+      }
+      ol {
+        list-style: decimal;
+      }
+      ul {
+        list-style: disc;
+      }
+      p {
+        margin: 10px 0;
+      }
+    }
+    &__snippet-thumb {
+      margin: 10px 0;
+    }
   }
 }
 
@@ -331,7 +389,7 @@ section {
       width: 250px;
       height: 230px;
       margin-top: 20px;
-      padding-top: 30px;
+      padding-top: 20px;
       background: url(../img/features.png) 50% 0 no-repeat;
 
       &__description {
@@ -358,9 +416,8 @@ section {
   text-align: center;
 
   h3 {
-    margin: 25px 0 25px;
-    font-family: Roboto, sans-serif;
-    font-size: 22px;
+    margin: 15px 0 25px;
+    font: $h3-font;
     font-weight: 300;
     text-transform: uppercase;
   }
@@ -405,7 +462,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   .comment {
@@ -432,9 +489,7 @@ section {
     }
 
     &__author {
-      font-family: Roboto, sans-serif;
-      font-weight: 700;
-      font-size: 22px;
+      font: $h3-font;
       padding-left: 10px;
     }
   }
@@ -595,7 +650,7 @@ h1, h2, h3, h4 {
   text-align: center;
 
   .logo {
-    margin-top: 80px;
+    margin-top: 70px;
     img {
       width: 129px;
     }
@@ -606,9 +661,7 @@ h1, h2, h3, h4 {
   }
 
   &__phone {
-    font-family: Roboto, sans-serif;
-    font-weight: 700;
-    font-size: 22px;
+    font: $h3-font;
     margin: 50px 0 20px;
   }
 
