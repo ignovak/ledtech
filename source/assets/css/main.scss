@@ -470,6 +470,8 @@ section {
     font-style: italic;
 
     &__body {
+      position: relative;
+      min-height: 200px;
       margin-bottom: 25px;
       padding: 30px;
       background-color: #e7eaef;
@@ -480,8 +482,8 @@ section {
       &:after {
         content: '';
         position: absolute;
+        bottom: -20px;
         display: block;
-        margin-top: 30px;
         border-style: solid;
         border-width: 10px 12px;
         border-color: #e7eaef transparent transparent;
