@@ -46,11 +46,6 @@ GLOBAL LAYOUT
 
 ///////////////////////////////////////////////////// */
 
-@font-face {
-  font-family: 'Signpainter';
-  src: url(../fonts/SignPainter_HouseCasual.ttf);
-}
-
 a {
   text-decoration: none;
 }
@@ -605,14 +600,18 @@ h1, h2, h3, h4 {
 
   &__phone {
     padding: 55px;
-    font-family: 'Signpainter', sans-serif;
-    font-weight: bold;
-    font-size: 50px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+
+    a {
+        color: #fff;
+    }
 
     &:before {
       content: '';
       display: inline-block;
-      width: 45px;
+      width: 30px;
       height: 40px;
       /* url(../img/phone-icon.png); */
       background: url(data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAoCAYAAADg+OpoAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wwXFSYdnbcIGwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACsElEQVRYw73XPYtcVRgH8N+czG7iZp2FRExQ1GJT+Fr6AQQbBT+AYGkbLEQrBdEUoo1gayUWKbQREQXBxkIQO1EsVKImRHRf3TWb2Z15LHxGjtfdzF32zv7hYc45c879n+fe57UXESo8g+dwVnucwDlcy/kGvsQL2Jps6iXRIq5jAb/hxiGIvsA27sP9uXYnTif53TXRDlYmiw0s4z2s4co+/3+Ndw64xA1cxQUR8WFEDCPCAXIl/sFu/o4jYidlmGvLB5xdzP1ExHpEfHYLouWI+CoiViqCWtZvcVZe5mIfffxRqXsRD+b4Ki7hUYfDS3kO/sQTfdRm9z0uYLdaeyUtqw0CQ5zM+aX8tsulsfEevI1TlfTRayklz2zh4Xzm7xg0iXp5oy5xDQtNoj2c7+Dhffyc412UJtEQ8x0Q9Rrz/xGNO9KoxgDjYvYYYNQk+qsyzaPibEW0vZ9Gpzsg2aues4T1JtHOIZxzmuNOcAprJc1vkIs3M2UcFWPckeOT2CwYZR6C1bzBUTFMX5r41Gbz1W1WG7pCyNjUtLr5Wdj4cfjREOePg2g8a41WKp9SctBvqHpUzFfJc4gzJUulQR0AZ/HtS1raUs4XZvAKR8dldVs4UWakRROLBXNVjdyfFVNJCxlVxtC5NtgoqcVqIwx1iduwWjoy52lpYqVksjvTMdFc1S/NTVL5RpXsPsG9Gdrbyjgvu5NRJjKnvVEZ2PWCb6tC4sUpJe/L+AE/4c1GGVyXzwXfVAb3S8H7LQuSy3i1cvLn8UHLxLc06fhin+qyiR+zg3uoaikfaNHvjvDUpFm6GREfT2mono2IUfwXb005825E7EXEvz3sk/goP+ZaRvRzGTG282aftrS4R3BXtkAFj+PzXqP9fw1P41d8l1Hjsfzv9pQ2bcoYr9dN9N99VaEB65KMKAAAAABJRU5ErkJggg==) 0 0 no-repeat;
