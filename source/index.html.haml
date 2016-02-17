@@ -136,10 +136,10 @@ keywords: LED доска, лед доска, рекламная доска, св
       = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
       .form__column
-        = label_tag :product, caption: "Тип товара"
+        = label_tag :product, caption: "Изделие"
         .custom-dropdown= select_tag :product, id: "product", options: %w(LED-штендер LED-доска)
-        = label_tag :construction, caption: "Тип конструкции"
-        .custom-dropdown= select_tag :construction, id: "construction", options: %w(Односторонний Двусторонний)
+        = label_tag :construction, caption: "Конструкция"
+        .custom-dropdown= select_tag :construction, id: "construction", options: %w(Односторонняя Двусторонняя)
         = label_tag :width, caption: "Размеры поверхности, см"
         = text_field_tag :width, id: "width", placeholder: "Ширина"
         = text_field_tag :height, id: "height", placeholder: "Высота"

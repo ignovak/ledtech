@@ -47,8 +47,8 @@
       $('#product').change(function() {
         $('#construction').html(
           this.value === 'LED-штендер' ?
-            '<option value="Односторонний">Односторонний</option><option value="Двусторонний">Двусторонний</option>' :
-            '<option value="С прозрачным фоном">С прозрачным фоном</option><option value="Прозрачная (фон отсутствует)">Прозрачная (фон отсутствует)</option>'
+            '<option value="Односторонняя">Односторонняя</option><option value="Двусторонняя">Двусторонняя</option>' :
+            '<option value="Прозрачная (задний фон отсутствует)">Прозрачная (задний фон отсутствует)</option><option value="С фоновой подложкой (чёрный цвет)">С фоновой подложкой (чёрный цвет)</option>'
         );
       });
       $('form').submit(function(e) {
