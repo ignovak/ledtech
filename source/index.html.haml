@@ -32,7 +32,7 @@ keywords: LED доска, лед доска, рекламная доска, св
           %p.snippet__description= item.description
           .price
             от
-            %span.amount= item.price
+            %span.amount= item.sizes.map{|s| s["price"]}.min
             грн
           .btn-primary= link_to "Заказать", "##{item.url}"
           .modal{ id: item.url }
@@ -45,8 +45,12 @@ keywords: LED доска, лед доска, рекламная доска, св
                   = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
                   = hidden_field_tag :product, value: item.title
                   = label_tag "size_#{i}", caption: "Размер пишущей поверхности"
-                  .custom-dropdown= select_tag :size, id: "size_#{i}", options: item.sizes
-                  = partial :credentials_fields, locals: { name_id: "customer_name_#{i}", email_id: "customer_email_#{i}" }
+                  .custom-dropdown
+                    = select_tag :size,
+                      id: "size_#{i}",
+                      options: item.sizes.map{|s| "#{s['size']} – #{s['price']} грн" }
+                  = partial :credentials_fields,
+                    locals: { name_id: "customer_name_#{i}", email_id: "customer_email_#{i}" }
                   = submit_tag "Отправить заявку"
               .details__contents
                 .details__snippet-thumb= image_tag "assets/img/item#{i + 1}_min.jpg"
