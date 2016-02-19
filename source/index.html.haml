@@ -49,7 +49,7 @@ keywords: LED доска, лед доска, рекламная доска, св
                   = partial :credentials_fields, locals: { name_id: "customer_name_#{i}", email_id: "customer_email_#{i}" }
                   = submit_tag "Отправить заявку"
               .details__contents
-                .details__snippet-thumb= image_tag "assets/img/item#{i + 1}.jpg"
+                .details__snippet-thumb= image_tag "assets/img/item#{i + 1}_min.jpg"
                 %h4 Комплектация:
                 %ol
                   - data.content.catalog.contents.each do |entry|
@@ -87,7 +87,7 @@ keywords: LED доска, лед доска, рекламная доска, св
             = partial :credentials_fields, locals: { name_id: "customer_name_markers", email_id: "customer_email_markers" }
             = submit_tag "Отправить заявку"
         .details__contents
-          .details__snippet-thumb= image_tag "assets/img/markers.jpg"
+          .details__snippet-thumb= image_tag "assets/img/markers_min.jpg"
           %h4 Набор разноцветных маркеров (8 штук):
           %p синий, розовый, белый, жёлтый, фиолетовый, красный, зелёный, оранжевый
           %p Толщина линии – 8 мм

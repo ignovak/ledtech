@@ -309,7 +309,7 @@ section {
 .catalog, .markers {
   .details {
     display: table;
-    width: 760px;
+    width: 750px;
     font-size: 14px;
     h3 {
       color: #fff;
@@ -339,12 +339,13 @@ section {
         display: block;
         width: 100%;
         &[type=submit] {
-          margin-top: 30px;
+          margin-top: 40px;
+          background: $background-light-color;
         }
       }
     }
     &__contents {
-      width: 402px; /* fix zoom distorting */
+      width: 392px; /* fix zoom distorting */
       h4 {
         margin-top: 10px;
         color: $background-light-color;
