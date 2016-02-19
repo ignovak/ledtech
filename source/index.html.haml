@@ -9,8 +9,8 @@ keywords: LED доска, лед доска, рекламная доска, св
   %h2.promo__subtitle= image_tag "assets/img/h2-content.png", alt: "Сделаем рекламу ярче"
   %h3.promo__description Прекрасная альтернатива стандартной меловой доске
   %h4.promo__phone
-    = succeed ',' do
-      = link_to data.content.phone1.gsub(/[()]/, ""), "tel:+38-095-180-2253"
+    = link_to data.content.phone1.gsub(/[()]/, ""), "tel:+38-095-180-2253"
+    %br
     = link_to data.content.phone2.gsub(/[()]/, ""), "tel:+38-050-805-4111"
 
 %section.annotation
