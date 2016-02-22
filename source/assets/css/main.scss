@@ -508,10 +508,11 @@ section {
   }
 
   .details {
-    height: 300px;
+    height: 320px;
     .input-row {
       text-align: left;
       display: inline-block;
+      margin-top: 10px;
     }
     label {
       display: inline-block;
