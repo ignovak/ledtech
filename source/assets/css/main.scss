@@ -50,18 +50,6 @@ a {
   text-decoration: none;
 }
 
-input[type=submit] {
-  padding: 10px 50px;
-  border: none;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
-  background-color: $background-dark-color;
-}
-
 input, textarea {
   padding: $form-field-padding;
   font-size: inherit;
@@ -126,17 +114,26 @@ header {
 
   a {
     padding: 12px 60px;
-    background: $background-dark-color;
     box-shadow: 0 0 0 1px $border-dark-color;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    text-transform: uppercase;
-    &:hover {
-      background: $background-light-color;
-    }
   }
+}
+
+.btn-primary a, input[type=submit] {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: $background-dark-color;
+  &:hover {
+    background: $background-light-color;
+  }
+}
+
+input[type=submit] {
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
 }
 
 .price {
