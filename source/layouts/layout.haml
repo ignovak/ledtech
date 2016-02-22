@@ -10,6 +10,9 @@
     %meta{ content: data.page.description, name: "description" }
     %meta{ content: data.page.keywords, name: "keywords" }
     %meta{ content: "width=device-width", name: "viewport" }
+    %meta{ content: data.page.title, name: "og:title" }
+    %meta{ content: data.content.url, name: "og:url" }
+    %meta{ content: "#{data.content.url}/assets/img/banner.jpg", name: "og:image" }
     %link{ href: "favicon.ico" }
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,cyrillic"
     = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Dosis:500&text=%2b1234567890"
