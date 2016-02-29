@@ -69,7 +69,16 @@
           data: data,
           dataType: 'json',
           success: function(data) {
-            location.href = data.next;
+            if (data.next) {
+              location.href = data.next;
+            } else {
+              ga('send', {
+                hitType: 'event',
+                eventCategory: 'form',
+                eventAction: 'error',
+                eventValue: data
+              });
+            }
           },
           error: function(error) {
             console.error(error);

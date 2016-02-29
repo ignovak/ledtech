@@ -77,6 +77,7 @@
                     <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_order" />
                     <input type="hidden" name="_subject" value="Новый заказ на ledtech" />
                     <input type="hidden" name="product" value="LED-штендер" />
+                    <input type="hidden" name="_cc" value="bezengi@gmail.com" />
                     <label for="size_0">Размер пишущей поверхности</label>
                     <div class='custom-dropdown'>
                       <select name="size" id="size_0"><option value="50x70 см – 1250 грн">50x70 см – 1250 грн</option>
@@ -127,6 +128,7 @@
                     <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_order" />
                     <input type="hidden" name="_subject" value="Новый заказ на ledtech" />
                     <input type="hidden" name="product" value="LED-доска" />
+                    <input type="hidden" name="_cc" value="bezengi@gmail.com" />
                     <label for="size_1">Размер пишущей поверхности</label>
                     <div class='custom-dropdown'>
                       <select name="size" id="size_1"><option value="40x60 см – 750 грн">40x60 см – 750 грн</option>
@@ -178,6 +180,7 @@
                     <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_order" />
                     <input type="hidden" name="_subject" value="Новый заказ на ledtech" />
                     <input type="hidden" name="product" value="LED-меню" />
+                    <input type="hidden" name="_cc" value="bezengi@gmail.com" />
                     <label for="size_2">Размер пишущей поверхности</label>
                     <div class='custom-dropdown'>
                       <select name="size" id="size_2"><option value="30x20 см (A4) – 499 грн">30x20 см (A4) – 499 грн</option>
@@ -239,6 +242,7 @@
                 <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_order" />
                 <input type="hidden" name="_subject" value="Новый заказ на ledtech" />
                 <input type="hidden" name="product" value="Флуоресцентные маркеры" />
+                <input type="hidden" name="_cc" value="bezengi@gmail.com" />
                 <label for="customer_name_markers">Ваше имя</label>
                 <input type="text" name="customer_name" id="customer_name_markers" placeholder="Имя" />
                 <label for="customer_email_markers">Мобильный телефон или е-mail</label>
@@ -289,6 +293,7 @@
           <h3>по индивидуальным размерам</h3>
           <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_order" />
           <input type="hidden" name="_subject" value="Новый заказ на ledtech" />
+          <input type="hidden" name="_cc" value="bezengi@gmail.com" />
           <div class='form__column'>
             <label for="product">Изделие</label>
             <div class='custom-dropdown'>
@@ -352,6 +357,7 @@
                 <h3>Оставить отзыв</h3>
                 <form action="//formspree.io/mail@ledtech.in.ua" accept-charset="UTF-8" method="post"><input type="hidden" name="_next" value="#thanks_for_feedback" />
                 <input type="hidden" name="_subject" value="Новый отзыв на ledtech" />
+                <input type="hidden" name="_cc" value="bezengi@gmail.com" />
                 <label for="username">Имя и фамилия</label>
                 <input type="text" name="username" id="username" placeholder="Введите имя и фамилию" />
                 <label for="feedback_text">Ваш отзыв</label>
@@ -440,7 +446,16 @@
           data: data,
           dataType: 'json',
           success: function(data) {
-            location.href = data.next;
+            if (data.next) {
+              location.href = data.next;
+            } else {
+              ga('send', {
+                hitType: 'event',
+                eventCategory: 'form',
+                eventAction: 'error',
+                eventValue: data
+              });
+            }
           },
           error: function(error) {
             console.error(error);

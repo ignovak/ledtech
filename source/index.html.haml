@@ -44,6 +44,7 @@ keywords: LED доска, лед доска, рекламная доска, св
                   = hidden_field_tag :_next, value: "#thanks_for_order"
                   = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
                   = hidden_field_tag :product, value: item.title
+                  = hidden_field_tag :_cc, value: data.content.cc_email
                   = label_tag "size_#{i}", caption: "Размер пишущей поверхности"
                   .custom-dropdown
                     = select_tag :size,
@@ -88,6 +89,7 @@ keywords: LED доска, лед доска, рекламная доска, св
             = hidden_field_tag :_next, value: "#thanks_for_order"
             = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
             = hidden_field_tag :product, value: item.title
+            = hidden_field_tag :_cc, value: data.content.cc_email
             = partial :credentials_fields, locals: { name_id: "customer_name_markers", email_id: "customer_email_markers" }
             = submit_tag "Отправить заявку"
         .details__contents
@@ -139,6 +141,7 @@ keywords: LED доска, лед доска, рекламная доска, св
     = form_tag data.content.form_action do
       = hidden_field_tag :_next, value: "#thanks_for_order"
       = hidden_field_tag :_subject, value: "Новый заказ на ledtech"
+      = hidden_field_tag :_cc, value: data.content.cc_email
       .form__column
         = label_tag :product, caption: "Изделие"
         .custom-dropdown= select_tag :product, id: "product", options: %w(LED-штендер LED-доска)
@@ -186,6 +189,7 @@ keywords: LED доска, лед доска, рекламная доска, св
           = form_tag data.content.form_action do
             = hidden_field_tag :_next, value: "#thanks_for_feedback"
             = hidden_field_tag :_subject, value: "Новый отзыв на ledtech"
+            = hidden_field_tag :_cc, value: data.content.cc_email
             = label_tag :username, caption: "Имя и фамилия"
             = text_field_tag :username, id: "username", placeholder: "Введите имя и фамилию"
             = label_tag :feedback_text, caption: "Ваш отзыв"
