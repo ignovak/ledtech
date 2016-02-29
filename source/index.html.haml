@@ -208,23 +208,24 @@ keywords: LED доска, лед доска, рекламная доска, св
       = link_to data.content.phone2, "tel:+38-050-805-4111"
     .contacts__email= link_to data.content.email, "mailto:#{data.content.email}"
 
-    #fb-root
-    = javascript_include_tag "//vk.com/js/api/openapi.js?121"
-    :javascript
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      VK.init({apiId: 5241214, onlyWidgets: true});
-    .fb-like{ "data-href" => "http://ledtech.in.ua/",
-      "data-layout" => "button_count",
-      "data-action" => "like",
-      "data-show-faces" => "true",
-      "data-share" => "true" }
+    - if build?
+      #fb-root
+      = javascript_include_tag "//vk.com/js/api/openapi.js?121"
+      :javascript
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        VK.init({apiId: 5241214, onlyWidgets: true});
+      .fb-like{ "data-href" => "http://ledtech.in.ua/",
+        "data-layout" => "button_count",
+        "data-action" => "like",
+        "data-show-faces" => "true",
+        "data-share" => "true" }
 
-    #vk_like{ style: "margin: 20px auto 0; padding-left: 18px;" }
-    :javascript
-      VK.Widgets.Like("vk_like", {type: "button"});
+      #vk_like{ style: "margin: 20px auto 0; padding-left: 18px;" }
+      :javascript
+        VK.Widgets.Like("vk_like", {type: "button"});
