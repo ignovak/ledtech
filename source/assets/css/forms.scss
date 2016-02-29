@@ -29,7 +29,6 @@ input, textarea {
     width: 40%;
     height: 250px;
     margin: auto;
-    overflow: scroll;
 
     background-color: #fff;
     text-align: center;
@@ -81,24 +80,24 @@ input, textarea {
 
 .catalog, .markers {
   .details {
-    width: 760px;
+    display: table;
+    width: 750px;
     height: 550px;
 
     &__form, &__contents {
+      display: table-cell;
       padding: 30px;
+      vertical-align: middle;
       text-align: left;
-      height: 100%;
       h3 {
         margin: 20px 0;
         text-align: left;
       }
     }
     &__form {
-      float: left;
       width: 360px;
     }
     &__contents {
-      float: right;
       width: 392px; /* fix zoom distorting */
       h4 {
         margin-top: 10px;
@@ -190,34 +189,31 @@ input, textarea {
    }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 750px) {
   .banner.catalog .snippet {
     width: auto;
   }
   .modal {
-    position: static;
-    display: block;
-    .close {
-      display: none;
-    }
     .details {
-      position: static;
+      display: block;
       width: 100%;
-      height: 0;
-      transition: height 0.3s ease-in-out;
+      height: 100%;
+      overflow-y: auto;
       &__contents, &__form {
-        float: none;
-        width: 100%;
-        height: auto;
+        display: block;
+        width: auto;
         padding: 10px 30px;
       }
       &__snippet-thumb {
         display: none;
       }
-    }
-
-    &:target .details {
-      height: auto;
+      .close {
+        top: 10px;
+        a {
+          font-size: 72px;
+          color: #fff;
+        }
+      }
     }
   }
 }
