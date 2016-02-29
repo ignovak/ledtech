@@ -1,7 +1,7 @@
 /* /////////////////////////////////////////////////////
 
-PROJECT NAME
-creator@project.com @ Creator Company
+ledtech.in.ua
+bezengi@gmail.com @ Igor Novak
 
 ///////////////////////////////////////////////////// */
 
@@ -38,6 +38,7 @@ creator@project.com @ Creator Company
 @import "pages";
 
 @import "custom-select";
+@import "forms";
 
 
 /* /////////////////////////////////////////////////////
@@ -48,11 +49,6 @@ GLOBAL LAYOUT
 
 a {
   text-decoration: none;
-}
-
-input, textarea {
-  padding: $form-field-padding;
-  font-size: inherit;
 }
 
 body {
@@ -146,64 +142,6 @@ input[type=submit] {
     font-size: 46px;
   }
 
-}
-
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-
-  display: none;
-
-  background-color: rgba(0, 0, 0, .6);
-
-  &:target {
-    display: block;
-  }
-
-  .details {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 40%;
-    height: 250px;
-    margin: auto;
-    overflow: scroll;
-
-    background-color: #fff;
-    text-align: center;
-
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-
-      a {
-        font: $h2-font;
-        font-weight: 300;
-      }
-    }
-
-    h3 {
-      font: $h3-font;
-      margin: 25px;
-      padding: 15px 0 0;
-      color: $background-light-color;
-      text-transform: uppercase;
-    }
-
-    p {
-      margin: 10px 60px;
-      color: #000;
-    }
-
-  }
 }
 
 .snippet {
@@ -303,71 +241,6 @@ section {
   }
 }
 
-.catalog, .markers {
-  .details {
-    display: table;
-    width: 750px;
-    font-size: 14px;
-    h3 {
-      color: #fff;
-    }
-    .close {
-      top: 0;
-      right: 10px;
-    }
-    &__form, &__contents {
-      display: table-cell;
-      padding: 30px;
-      text-align: left;
-      vertical-align: middle;
-      h3 {
-        margin: 20px 0;
-        text-align: left;
-      }
-    }
-    &__form {
-      width: 360px;
-      background: $background-base-color;
-      color: #fff;
-      input, .custom-dropdown {
-        margin: 6px 0 15px;
-      }
-      input {
-        display: block;
-        width: 100%;
-        &[type=submit] {
-          margin-top: 40px;
-          background: $background-light-color;
-        }
-      }
-    }
-    &__contents {
-      width: 392px; /* fix zoom distorting */
-      h4 {
-        margin-top: 10px;
-        color: $background-light-color;
-        font-weight: bold;
-        text-align: left;
-      }
-      ol, ul {
-        margin-left: 20px;
-      }
-      ol {
-        list-style: decimal;
-      }
-      ul {
-        list-style: disc;
-      }
-      p {
-        margin: 10px 0;
-      }
-    }
-    &__snippet-thumb {
-      margin: 10px 0;
-    }
-  }
-}
-
 .features {
   background: $select-color url(../img/features-bg.jpg) 50% 0 no-repeat;
   color: #fff;
@@ -400,51 +273,6 @@ section {
         background-position: 50% -690px;
       }
     }
-  }
-}
-
-.form {
-  background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
-  color: #fff;
-  text-align: center;
-
-  h3 {
-    margin: 15px 0 25px;
-    font: $h3-font;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-
-  &__column {
-    display: inline-block;
-    margin: 25px;
-    width: 31%;
-
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: left;
-    vertical-align: top;
-
-    label {
-      display: block;
-      margin: 10px 0;
-
-      &[for=width] {
-        & ~ input {
-          float: right;
-          width: 49%;
-        }
-        & + input {
-          float: left;
-        }
-      }
-    }
-
-    input {
-      width: 100%;
-    }
-
   }
 }
 
@@ -504,25 +332,6 @@ section {
     }
   }
 
-  .details {
-    height: 320px;
-    .input-row {
-      text-align: left;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    label {
-      display: inline-block;
-      width: 130px;
-    }
-    input, textarea {
-      display: inline-block;
-      width: 270px;
-    }
-    p {
-      margin-top: 20px;
-    }
-  }
   #thanks_for_feedback .details {
     height: 200px;
   }

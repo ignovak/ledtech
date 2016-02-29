@@ -42,8 +42,8 @@
           history.back();
         }
       });
-      $('.modal').on('click', function(e) {
-        if (e.target === e.currentTarget) {
+      $('body').on('click', function(e) {
+        if ($('.modal:visible').length && $(e.target).parents('.modal').length) {
           history.back();
         }
       });
