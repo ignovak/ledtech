@@ -440,6 +440,7 @@ h1, h2, h3, h4 {
 }
 
 .contacts {
+  background-color: $select-color;
   background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   color: #fff;
   text-align: center;
@@ -516,6 +517,7 @@ h1, h2, h3, h4 {
   }
   .features {
     padding: 0 20px;
+    background-color: $select-color;
     background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   }
 }

@@ -129,6 +129,7 @@ input, textarea {
 }
 
 .form {
+  background-color: $select-color;
   background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
   color: #fff;
   text-align: center;
