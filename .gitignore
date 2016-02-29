@@ -2,4 +2,5 @@
 /.sass-cache
 .sass-cache
 .scssc
-build/
+build/*
+!build/index.html
