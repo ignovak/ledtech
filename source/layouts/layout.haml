@@ -43,7 +43,7 @@
         }
       });
       $('body').on('click', function(e) {
-        if ($('.modal:visible').length && $(e.target).parents('.modal').length) {
+        if ($('.modal:visible').length && !$(e.target).parents('.modal').length) {
           history.back();
         }
       });
