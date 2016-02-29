@@ -1,5 +1,6 @@
 input, textarea {
   padding: $form-field-padding;
+  font-family: inherit;
   font-size: inherit;
 }
 
@@ -46,7 +47,7 @@ input, textarea {
 
     .close {
       position: absolute;
-      top: 0px;
+      top: 0;
       right: 10px;
 
       a {
@@ -56,12 +57,14 @@ input, textarea {
     }
 
     &__form {
+      padding: 30px;
       background: $background-base-color;
       color: #fff;
+      text-align: left;
       input, .custom-dropdown {
         margin: 6px 0 15px;
       }
-      input {
+      input, textarea {
         display: block;
         width: 100%;
         &[type=submit] {
@@ -82,13 +85,10 @@ input, textarea {
   .details {
     display: table;
     width: 750px;
-    height: 550px;
 
     &__form, &__contents {
       display: table-cell;
-      padding: 30px;
       vertical-align: middle;
-      text-align: left;
       h3 {
         margin: 20px 0;
         text-align: left;
@@ -99,6 +99,7 @@ input, textarea {
     }
     &__contents {
       width: 392px; /* fix zoom distorting */
+      text-align: left;
       h4 {
         margin-top: 10px;
         color: $background-light-color;
@@ -169,24 +170,8 @@ input, textarea {
   }
 }
 
-.feedback .details {
-   height: 320px;
-   .input-row {
-     text-align: left;
-     display: inline-block;
-     margin-top: 10px;
-   }
-   label {
-     display: inline-block;
-     width: 130px;
-   }
-   input, textarea {
-     display: inline-block;
-     width: 270px;
-   }
-   p {
-     margin-top: 20px;
-   }
+.feedback .details .close a {
+  color: #fff;
 }
 
 @media all and (max-width: 750px) {
@@ -215,5 +200,8 @@ input, textarea {
         }
       }
     }
+  }
+  .feedback .details__form {
+    height: 100%;
   }
 }

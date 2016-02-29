@@ -180,17 +180,16 @@ keywords: LED доска, лед доска, рекламная доска, св
     .modal#give_feedback
       .details
         .close= link_to "×", "#"
-        %h3 Оставить отзыв
-        = form_tag data.content.form_action do
-          = hidden_field_tag :_next, value: "#thanks_for_feedback"
-          = hidden_field_tag :_subject, value: "Новый отзыв на ledtech"
-          .input-row
+        .details__form
+          %h3 Оставить отзыв
+          = form_tag data.content.form_action do
+            = hidden_field_tag :_next, value: "#thanks_for_feedback"
+            = hidden_field_tag :_subject, value: "Новый отзыв на ledtech"
             = label_tag :username, caption: "Имя и фамилия"
             = text_field_tag :username, id: "username", placeholder: "Введите имя и фамилию"
-          .input-row
             = label_tag :feedback_text, caption: "Ваш отзыв"
             ~ text_area_tag :feedback_text, id: "feedback_text", placeholder: "Введите текст…"
-          %p= submit_tag "Отправить отзыв"
+            = submit_tag "Отправить отзыв"
 
     .modal#thanks_for_feedback
       .details
