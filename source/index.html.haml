@@ -36,7 +36,7 @@ keywords: LED доска, лед доска, рекламная доска, св
             грн
           .btn-primary= link_to "Заказать", "##{item.url}"
           .modal{ id: item.url }
-            .details
+            .details.details-table
               .close= link_to '×', '#prices'
               .details__form
                 %h3= item.form_title || item.title
@@ -80,7 +80,7 @@ keywords: LED доска, лед доска, рекламная доска, св
       грн
     .btn-primary= link_to "Заказать", "##{item.url}"
     .modal{ id: item.url }
-      .details
+      .details.details-table
         .close= link_to '×', '#prices'
         .details__form
           %h3= item.title
@@ -153,9 +153,10 @@ keywords: LED доска, лед доска, рекламная доска, св
 
   .modal#thanks_for_order
     .details
-      %h3 Ваша заявка принята
-      %p Спасибо, что обратились в нашу компанию, менеджер свяжется с вами в ближайшее время.
-      .btn-primary= link_to "Закрыть", "#"
+      .details__message
+        %h3 Ваша заявка принята
+        %p Спасибо, что обратились в нашу компанию, менеджер свяжется с вами в ближайшее время.
+        .btn-primary= link_to "Закрыть", "#"
 
 -# .gallery
   %h3
@@ -193,8 +194,9 @@ keywords: LED доска, лед доска, рекламная доска, св
 
     .modal#thanks_for_feedback
       .details
-        %h3 Спасибо за отзыв
-        .btn-primary= link_to "Закрыть", "#"
+        .details__message
+          %h3 Спасибо за отзыв
+          .btn-primary= link_to "Закрыть", "#"
 
 .banner.contacts
   %section
