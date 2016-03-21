@@ -545,6 +545,7 @@ h1, h2, h3, h4 {
     }
   }
   .promo {
+    background-image: linear-gradient(to right, $background-light-color, $background-dark-color);
     height: 655px;
     &__phone {
       padding: 15px 5px;
