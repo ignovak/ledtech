@@ -161,12 +161,14 @@ keywords: LED доска, лед доска, рекламная доска, св
         %p Спасибо, что обратились в нашу компанию, менеджер свяжется с вами в ближайшее время.
         .btn-primary= link_to "Закрыть", "#"
 
--# .gallery
-  %h3
-    %a{ name: 'gallery' } Галерея
-  .carousel
-    - 6.times do
-      .carousel__item
+.gallery
+  %section
+    %h2
+      %a{ name: 'gallery' } Галерея
+    .carousel
+      - data.content.gallery.each do |item|
+        .carousel__item
+          = link_to image_tag("assets/img/#{item.src}_m.jpg", alt: item.alt), "assets/img/#{item.src}.jpg"
 
 .banner.feedback
   %section

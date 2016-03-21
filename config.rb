@@ -49,6 +49,9 @@ helpers do
   def stylesheet_inline_tag css
     "<style>#{sitemap.resources.select { |p| p.source_file.include?(css) }.first.render}</style>"
   end
+  def javascript_inline_tag js
+    "<script>#{sitemap.resources.select { |p| p.source_file.include?(js) }.first.render}</script>"
+  end
 end
 
 set :css_dir, 'assets/css'

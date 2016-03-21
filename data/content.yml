@@ -49,6 +49,22 @@ catalog:
     - Набор флуоресцентных маркеров
     - Провод-удлинитель до 30 м
 
+gallery:
+  - src: led_board_day
+    alt: LED-доска днём
+  - src: led_board_evening
+    alt: LED-доска вечером
+  - src: led_board_kalian
+    alt: LED-доска в кальянной
+  - src: led_board_night
+    alt: LED-доска ночью
+  - src: led_board_shop_1
+    alt: LED-доска в магазине
+  - src: led_board_shop_2
+    alt: LED-доска в кондитерской
+  - src: led_shtender
+    alt: LED-штендер
+
 feedback:
   - body: У меня кафе, взял LED-доску на замену меловой. Да, действительно вышел крутой визуальный эффект! Клиенты с интересом идут на LED доску. Количество посетителей увеличилось.
     author: Александр, Киев

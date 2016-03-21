@@ -38,6 +38,7 @@ bezengi@gmail.com @ Igor Novak
 @import "pages";
 
 @import "custom-select";
+@import "libs/touch-gallery.css";
 @import "forms";
 
 
@@ -415,26 +416,27 @@ h1, h2, h3, h4 {
 }
 
 .gallery {
-  background: #eee;
-  padding-bottom: 25px;
+  background-color: #f5f6f8;
 
-  h3 {
-    padding: 30px 0 25px;
+  section {
+    max-width: none;
+    margin: auto 20px;
+  }
+
+  h2 {
+    margin-bottom: 40px;
   }
 
   .carousel {
-    background: linear-gradient(to right, #ccc, #aaa 20%, #aaa 80%, #ccc);
+    padding-bottom: 20px;
     white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .carousel__item {
-    display: inline-block;
-    width: 250px;
-    height: 250px;
-    box-shadow: 0 0 0 5px #eee;
-    &:first-child {
-      margin-left: -40px;
+    overflow-x: scroll;
+    &__item {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        box-shadow: 0 0 0 1px #eee, 0 0 0 7px #333;
     }
   }
 }
@@ -486,6 +488,9 @@ h1, h2, h3, h4 {
   header {
     .header__content {
       min-width: 0;
+    }
+    .nav__item {
+      padding: 24px 10px 20px;
     }
   }
   .catalog, .feedback {
