@@ -14,6 +14,7 @@
   slider = $('<div id="gallerySlider">'),
   prevArrow = $('<a id="prevArrow"></a>'),
   nextArrow = $('<a id="nextArrow"></a>'),
+  closeBtn = $('<a class="close" href="#">×</a>'),
   overlayVisible = false;
 
 
@@ -96,7 +97,7 @@
     // If the browser does not have support
     // for touch, display the arrows
     if ( !("ontouchstart" in window) ){
-      overlay.append(prevArrow).append(nextArrow);
+      overlay.append(prevArrow).append(nextArrow).append(closeBtn);
 
       prevArrow.click(function(e){
         e.preventDefault();
@@ -106,6 +107,11 @@
       nextArrow.click(function(e){
         e.preventDefault();
         showNext();
+      });
+
+      closeBtn.click(function(e){
+        e.preventDefault();
+        hideOverlay();
       });
     }
 
@@ -117,6 +123,9 @@
       }
       else if (e.keyCode==39){
         showNext();
+      }
+      else if (e.keyCode==27){
+        hideOverlay();
       }
 
     });
