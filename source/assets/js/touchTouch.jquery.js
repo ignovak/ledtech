@@ -37,7 +37,13 @@
 
     // Hide the gallery if the background is touched / clicked
     slider.append(placeholders).on('click',function(e){
-      if(!$(e.target).is('img')){
+      if($(e.target).is('img')){
+        if (e.offsetX < e.target.width / 2) {
+          showPrevious();
+        } else {
+          showNext();
+        }
+      } else {
         hideOverlay();
       }
     });
